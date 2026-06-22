@@ -18,16 +18,16 @@
             --text-muted: #64748b;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background: #f1f5f9; color: var(--text-main); }
+        body { font-family: 'Inter', sans-serif; background: #f1f5f9; color: var(--text-main); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
         h1, h2, h3 { font-family: 'Outfit', sans-serif; }
         
-        .header { background: white; padding: 1rem 2rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .header { background: white; padding: 1rem 2rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05); flex-shrink: 0; }
         .header h1 { color: var(--color-primary); font-size: 1.5rem; }
         
-        .container { display: flex; gap: 2rem; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+        .container { display: flex; gap: 2rem; padding: 2rem; max-width: 1400px; margin: 0 auto; flex: 1; overflow: hidden; width: 100%; }
         
-        .sidebar { flex: 1; display: flex; flex-direction: column; gap: 1.5rem; }
-        .main-content { flex: 2; background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .sidebar { width: 300px; flex-shrink: 0; display: flex; flex-direction: column; gap: 1.5rem; overflow-y: auto; }
+        .main-content { flex: 1; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; overflow: hidden; }
         
         .card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
         .card h2 { font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
@@ -37,17 +37,27 @@
         .stat-value { font-size: 1.5rem; font-weight: bold; color: var(--color-primary); margin-bottom: 0.25rem; font-family: 'Outfit', sans-serif;}
         .stat-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
         
+        /* Tabs */
+        .tabs { display: flex; border-bottom: 1px solid var(--border-color); background: var(--bg-light); border-radius: 8px 8px 0 0; }
+        .tab-btn { flex: 1; padding: 1rem; border: none; background: transparent; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--text-muted); cursor: pointer; border-bottom: 3px solid transparent; transition: 0.2s; }
+        .tab-btn:hover { color: var(--color-primary); background: white; }
+        .tab-btn.active { color: var(--color-primary); border-bottom-color: var(--color-primary); background: white; }
+        
+        .tab-content { padding: 2rem; overflow-y: auto; flex: 1; display: none; }
+        .tab-content.active { display: block; }
+
+        /* Forms */
         .product-group { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); }
         .product-group h3 { margin-bottom: 1rem; color: var(--color-primary); display: flex; justify-content: space-between; align-items: center; }
-        
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
         .form-group.full { grid-column: span 2; }
         
         label { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); }
-        input[type="text"], input[type="number"] { padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: inherit; font-size: 1rem; }
-        input[type="text"]:focus, input[type="number"]:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 2px rgba(1, 147, 64, 0.1); }
+        input[type="text"], input[type="number"], select { padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: inherit; font-size: 1rem; }
+        input[type="text"]:focus, input[type="number"]:focus, select:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 2px rgba(1, 147, 64, 0.1); }
         
+        /* Switches */
         .switch { position: relative; display: inline-block; width: 50px; height: 24px; }
         .switch input { opacity: 0; width: 0; height: 0; }
         .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #cbd5e1; transition: .4s; border-radius: 24px; }
@@ -55,16 +65,40 @@
         input:checked + .slider { background-color: var(--color-primary); }
         input:checked + .slider:before { transform: translateX(26px); }
         
+        /* Buttons */
         .actions { display: flex; gap: 1rem; margin-top: 1.5rem; }
         .btn { padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; font-family: 'Outfit', sans-serif; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
         .btn-primary { background: var(--color-primary); color: white; flex: 1; }
         .btn-primary:hover { background: var(--color-primary-light); }
         .btn-accent { background: var(--color-accent); color: white; width: 100%; margin-top: 1rem; }
         .btn-accent:hover { background: #d97b1f; }
-        .btn-outline { background: white; border: 1px solid var(--color-primary); color: var(--color-primary); }
-        .btn-outline:hover { background: var(--bg-light); }
+        .btn-outline { background: white; border: 1px solid var(--border-color); color: var(--text-main); }
+        .btn-outline:hover { background: var(--bg-light); border-color: var(--color-primary); color: var(--color-primary); }
+        .btn-danger { background: #fee2e2; color: #dc2626; border: 1px solid #fecaca; padding: 0.5rem 1rem; }
+        .btn-danger:hover { background: #fecaca; }
 
         .log-box { background: #1e293b; color: #38bdf8; font-family: monospace; padding: 1rem; border-radius: 6px; font-size: 0.85rem; height: 150px; overflow-y: auto; margin-top: 1rem; white-space: pre-wrap; }
+
+        /* Gallery Styles */
+        .upload-zone { border: 2px dashed var(--color-primary); border-radius: 8px; padding: 3rem; text-align: center; background: #f0fdf4; cursor: pointer; transition: 0.2s; margin-bottom: 2rem; }
+        .upload-zone:hover, .upload-zone.dragover { background: #dcfce7; }
+        .upload-zone input { display: none; }
+        .upload-icon { font-size: 3rem; margin-bottom: 1rem; }
+        
+        .gallery-category-block { margin-bottom: 3rem; }
+        .gallery-category-block h3 { margin-bottom: 1rem; color: var(--color-secondary); border-bottom: 2px solid var(--bg-light); padding-bottom: 0.5rem;}
+        
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
+        .gallery-card { background: white; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.2s; cursor: grab; }
+        .gallery-card:active { cursor: grabbing; }
+        .gallery-card:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .gallery-img-wrapper { aspect-ratio: 4/3; background: var(--bg-light); overflow: hidden; position: relative;}
+        .gallery-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-info { padding: 1rem; }
+        .gallery-info .file-name { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .gallery-info .file-size { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem; }
+        .gallery-actions { display: flex; gap: 0.5rem; }
+        .gallery-actions button { flex: 1; padding: 0.4rem; font-size: 0.8rem; border-radius: 4px; }
     </style>
 </head>
 <body>
@@ -78,19 +112,32 @@
         <div class="sidebar">
             <div class="card">
                 <h2>Dashboard Status</h2>
-                <div class="stat-grid">
+                <div class="stat-grid" id="main-stats">
+                    <!-- Products stats -->
                     <div class="stat-box">
                         <div class="stat-value" id="stat-products">0</div>
                         <div class="stat-label">Products</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-value" id="stat-modified">0</div>
-                        <div class="stat-label">Modified Files</div>
+                        <div class="stat-label">Modified</div>
                     </div>
-                    <div class="stat-box" style="grid-column: span 2;">
-                        <div class="stat-value" id="stat-last-publish" style="font-size: 1.1rem;">Never</div>
-                        <div class="stat-label">Last Publish Date</div>
+                </div>
+                <div class="stat-grid" id="gallery-stats" style="display: none; margin-top: 1rem;">
+                    <!-- Gallery Stats -->
+                    <div class="stat-box">
+                        <div class="stat-value" id="stat-images">0</div>
+                        <div class="stat-label">Images</div>
                     </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="stat-storage">0 MB</div>
+                        <div class="stat-label">Storage</div>
+                    </div>
+                </div>
+                
+                <div class="stat-box" style="margin-top: 1rem;">
+                    <div class="stat-value" id="stat-last-publish" style="font-size: 1.1rem;">Never</div>
+                    <div class="stat-label">Last Publish Date</div>
                 </div>
 
                 <div style="margin-top: 2rem;">
@@ -102,23 +149,222 @@
             </div>
         </div>
 
-        <!-- Main Form -->
+        <!-- Main Content -->
         <div class="main-content">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 1rem;">
-                <h2>Manage Daily Rates</h2>
-                <div class="actions" style="margin-top: 0;">
-                    <button class="btn btn-outline" id="preview-btn">👁 Preview</button>
-                    <button class="btn btn-primary" id="save-btn">💾 Save & Generate HTML</button>
+            <div class="tabs">
+                <button class="tab-btn active" data-target="products-tab">Daily Rates</button>
+                <button class="tab-btn" data-target="gallery-tab">Gallery Manager</button>
+                <button class="tab-btn" data-target="cms-tab">Content CMS</button>
+                <button class="tab-btn" data-target="seo-tab">SEO Manager</button>
+            </div>
+
+            <!-- Products Tab -->
+            <div id="products-tab" class="tab-content active">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 1rem;">
+                    <h2>Products & Brands Manager</h2>
+                    <div class="actions" style="margin-top: 0;">
+                        <button class="btn btn-outline" id="preview-products-btn">👁 Preview Page</button>
+                        <button class="btn btn-primary" id="save-products-btn">💾 Save & Generate HTML</button>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 300px 1fr; gap: 2rem;">
+                    <!-- Categories Panel -->
+                    <div class="card" style="padding: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3>Categories</h3>
+                            <button id="add-category-btn" class="btn btn-primary" style="padding: 0.5rem; font-size: 0.9rem;">+ Add</button>
+                        </div>
+                        <ul id="categories-list" style="list-style: none; padding: 0;">
+                            <!-- Category items injected here -->
+                        </ul>
+                    </div>
+
+                    <!-- Brands Panel -->
+                    <div class="card" style="padding: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 id="brands-panel-title">Select a Category</h3>
+                            <button id="add-brand-btn" class="btn btn-primary" style="padding: 0.5rem; font-size: 0.9rem; display: none;">+ Add Brand</button>
+                        </div>
+                        <div id="brands-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;">
+                            <!-- Brand cards injected here -->
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <form id="products-form">
-                <!-- Products will be dynamically injected here by renderer.js -->
-                <div id="products-container">Loading products...</div>
-            </form>
+
+            <!-- Brand Edit Modal -->
+            <div id="brand-modal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; align-items:center; justify-content:center;">
+                <div class="card" style="width: 500px; max-height: 90vh; overflow-y: auto;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                        <h3 id="brand-modal-title">Add Brand</h3>
+                        <button id="close-brand-modal" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+                    </div>
+                    <form id="brand-form">
+                        <input type="hidden" id="brand-id">
+                        
+                        <div class="form-group full">
+                            <label>Brand Name</label>
+                            <input type="text" id="brand-name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group full">
+                            <label>Short Description</label>
+                            <textarea id="brand-description" class="form-control" rows="2" required></textarea>
+                        </div>
+
+                        <div class="form-group full" style="border: 2px dashed var(--border-color); padding: 1rem; text-align: center; border-radius: 8px; margin-bottom: 1rem;">
+                            <label style="display:block; margin-bottom: 0.5rem;">Brand Image</label>
+                            <div id="brand-image-preview" style="width: 100%; height: 150px; background: #f1f5f9; display:flex; align-items:center; justify-content:center; margin-bottom: 1rem; overflow: hidden; border-radius: 4px;">
+                                <span style="color:#64748b;">No Image Selected</span>
+                            </div>
+                            <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 0.5rem;">Drag & drop an image here or click below</div>
+                            <input type="file" id="brand-image-upload" accept="image/*" style="font-size: 0.9rem;">
+                            <input type="hidden" id="brand-image-path">
+                        </div>
+
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div class="form-group">
+                                <label>Rate (₹)</label>
+                                <input type="number" id="brand-rate" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Unit</label>
+                                <input type="text" id="brand-unit" class="form-control" value="Quintal" required>
+                            </div>
+                        </div>
+
+                        <div style="display:flex; justify-content: space-between; margin-bottom: 1.5rem;">
+                            <label style="display:flex; align-items:center; gap: 0.5rem; cursor:pointer;">
+                                <input type="checkbox" id="brand-show-rate" style="width:18px; height:18px;">
+                                <span>Show Rate on Website</span>
+                            </label>
+                            <label style="display:flex; align-items:center; gap: 0.5rem; cursor:pointer;">
+                                <input type="checkbox" id="brand-available" style="width:18px; height:18px;">
+                                <span>In Stock</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width:100%;">Save Brand</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Gallery Tab -->
+            <div id="gallery-tab" class="tab-content">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 1rem;">
+                    <h2>Gallery Manager</h2>
+                    <div class="actions" style="margin-top: 0;">
+                        <button class="btn btn-outline" id="preview-gallery-btn">👁 Preview Gallery</button>
+                    </div>
+                </div>
+
+                <div class="upload-zone" id="upload-zone">
+                    <div class="upload-icon">📁</div>
+                    <h3>Drag & Drop Images Here</h3>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;">or click to select files (JPG, PNG, WebP)</p>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; max-width: 400px; margin: 0 auto;">
+                        <select id="upload-category" class="form-control" style="flex: 1;">
+                            <option value="infrastructure">Our Infrastructure</option>
+                            <option value="processing-unit-1">Processing Unit 1</option>
+                            <option value="processing-unit-2">Processing Unit 2</option>
+                            <option value="products">Our Products</option>
+                            <option value="packing">Packing & Dispatch</option>
+                        </select>
+                        <button class="btn btn-primary" id="browse-btn" style="padding: 0.5rem 1rem;">Browse Files</button>
+                    </div>
+                    <input type="file" id="file-input" multiple accept="image/jpeg, image/png, image/webp">
+                </div>
+
+                <div id="gallery-container">
+                    <!-- Gallery grids will be dynamically injected here -->
+                </div>
+            </div>
+
+            <!-- Content CMS Tab -->
+            <div id="cms-tab" class="tab-content">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 1rem;">
+                    <h2>Content Manager</h2>
+                    <div class="actions" style="margin-top: 0;">
+                        <button class="btn btn-outline" id="preview-cms-btn">👁 Preview Index</button>
+                        <button class="btn btn-primary" id="save-cms-btn">💾 Save Content</button>
+                    </div>
+                </div>
+                
+                <form id="cms-form">
+                    <div class="product-group">
+                        <h3>Homepage Content</h3>
+                        <div class="form-grid">
+                            <div class="form-group full"><label>Hero Title</label><input type="text" id="cms-home-heroTitle"></div>
+                            <div class="form-group full"><label>Hero Description</label><textarea id="cms-home-heroDescription" class="form-control" rows="2"></textarea></div>
+                            <div class="form-group"><label>Years of Experience</label><input type="text" id="cms-home-yearsExperience"></div>
+                            <div class="form-group"><label>Product Categories</label><input type="text" id="cms-home-productCategories"></div>
+                            <div class="form-group"><label>Quality Assurance</label><input type="text" id="cms-home-qualityAssurance"></div>
+                            <div class="form-group"><label>Processing Units</label><input type="text" id="cms-home-processingUnits"></div>
+                        </div>
+                    </div>
+
+                    <div class="product-group">
+                        <h3>About Us Content</h3>
+                        <div class="form-grid">
+                            <div class="form-group full"><label>Company Story</label><textarea id="cms-about-companyStory" class="form-control" rows="3"></textarea></div>
+                            <div class="form-group full"><label>Company Overview</label><textarea id="cms-about-overview" class="form-control" rows="3"></textarea></div>
+                            <div class="form-group"><label>Mission</label><textarea id="cms-about-mission" class="form-control" rows="2"></textarea></div>
+                            <div class="form-group"><label>Vision</label><textarea id="cms-about-vision" class="form-control" rows="2"></textarea></div>
+                            <div class="form-group full"><label>Key Strengths</label><input type="text" id="cms-about-keyStrengths"></div>
+                        </div>
+                    </div>
+
+                    <div class="product-group">
+                        <h3>Contact Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group"><label>Primary Mobile</label><input type="text" id="cms-contact-primaryMobile"></div>
+                            <div class="form-group"><label>Secondary Mobile</label><input type="text" id="cms-contact-secondaryMobile"></div>
+                            <div class="form-group full"><label>Email Address</label><input type="text" id="cms-contact-email"></div>
+                            <div class="form-group full"><label>Physical Address</label><textarea id="cms-contact-address" class="form-control" rows="2"></textarea></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- SEO Manager Tab -->
+            <div id="seo-tab" class="tab-content">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 1rem;">
+                    <h2>SEO Manager</h2>
+                    <div class="actions" style="margin-top: 0;">
+                        <button class="btn btn-primary" id="save-seo-btn">💾 Save SEO Meta</button>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 2rem;">
+                    <label>Select Page to Edit SEO</label>
+                    <select id="seo-page-select" class="form-control" style="font-size: 1.1rem; padding: 0.5rem;">
+                        <option value="index">Home Page (index.html)</option>
+                        <option value="about">About Us (about.html)</option>
+                        <option value="services">Services (services.html)</option>
+                        <option value="products">Products (products.html)</option>
+                        <option value="gallery">Gallery (gallery.html)</option>
+                        <option value="contact">Contact (contact.html)</option>
+                    </select>
+                </div>
+
+                <form id="seo-form" class="card">
+                    <div class="form-grid">
+                        <div class="form-group full"><label>Meta Title</label><input type="text" id="seo-title"></div>
+                        <div class="form-group full"><label>Meta Description</label><textarea id="seo-description" class="form-control" rows="2"></textarea></div>
+                        <div class="form-group full"><label>Keywords</label><input type="text" id="seo-keywords" placeholder="Comma separated keywords"></div>
+                        <div class="form-group full"><label>Open Graph Title</label><input type="text" id="seo-ogTitle"></div>
+                        <div class="form-group full"><label>Open Graph Description</label><textarea id="seo-ogDescription" class="form-control" rows="2"></textarea></div>
+                        <div class="form-group full"><label>Canonical URL</label><input type="text" id="seo-canonicalUrl"></div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
+    <!-- Include SortableJS for Drag and Drop Reordering -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="renderer.js"></script>
 </body>
 </html>

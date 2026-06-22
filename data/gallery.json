@@ -1,0 +1,34 @@
+{
+  "categories": [
+    {
+      "id": "infrastructure",
+      "name": "Our Infrastructure",
+      "description": "A glimpse into our state-of-the-art facilities dedicated exclusively to grain cleaning and processing.",
+      "images": []
+    },
+    {
+      "id": "processing-unit-1",
+      "name": "Processing Unit 1",
+      "description": "Primary grain cleaning and sorting area.",
+      "images": []
+    },
+    {
+      "id": "processing-unit-2",
+      "name": "Processing Unit 2",
+      "description": "Secondary processing and advanced sorting.",
+      "images": []
+    },
+    {
+      "id": "products",
+      "name": "Our Products",
+      "description": "Premium sorted and cleaned grains.",
+      "images": []
+    },
+    {
+      "id": "packing",
+      "name": "Packing & Dispatch",
+      "description": "Secure packing and logistics handling.",
+      "images": []
+    }
+  ]
+}

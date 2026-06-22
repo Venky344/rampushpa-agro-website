@@ -1,0 +1,38 @@
+{
+  "homepage": {
+    "heroTitle": "Premium Grain Cleaning & Agro Processing",
+    "heroDescription": "Welcome to Rampushpa. We are a trusted Grain Cleaning and Processing facility dedicated to quality, reliability, and farmer satisfaction.",
+    "yearsExperience": "10+",
+    "productCategories": "4",
+    "qualityAssurance": "100%",
+    "processingUnits": "2",
+    "ctaText": "Ready to Elevate Your Business?",
+    "ctaDescription": "Connect with our experienced team today for inquiries about grain cleaning, processing, or bulk orders."
+  },
+  "about": {
+    "companyStory": "Founded in 2017, Rampushpa Agro Processing was established with a clear mission: to provide the highest quality grain cleaning and processing services in Maharashtra. Located in the heart of Beed, we bridge the gap between hard-working farmers and premium markets.",
+    "mission": "To empower farmers through fair practices and deliver uncompromised quality grains to the market, ensuring food safety and excellence at every step.",
+    "vision": "To be India's most trusted name in agro-processing, known for our technological advancements, ethical sourcing, and superior end-products.",
+    "overview": "Rampushpa Agro Processing operates state-of-the-art facilities designed for maximum efficiency and precision. We process thousands of tons of grains annually, maintaining stringent quality controls from raw material intake to final packaging.",
+    "keyStrengths": "Advanced Sortex Technology, Experienced Workforce, Strategic Location, Uncompromising Quality Control."
+  },
+  "infrastructure": {
+    "unit1": "Our primary facility houses our main cleaning and sorting lines, optimized for high-throughput wheat and jowar processing.",
+    "unit2": "A specialized unit dedicated to precision sorting, utilizing advanced optical technology to ensure zero-defect product outputs.",
+    "cleaning": "We use multi-stage pre-cleaners, destoners, and gravity separators to remove all impurities, dust, and foreign materials.",
+    "storage": "Climate-controlled, pest-free silos and warehouses ensuring grains maintain their nutritional value and freshness.",
+    "packing": "Automated packing lines capable of handling bulk bags to retail-ready pouches with high-precision weighing.",
+    "highlights": "24/7 Power Backup, Automated Handling, In-house Lab Testing, CCTV Surveillance."
+  },
+  "contact": {
+    "companyName": "Rampushpa Agro Processing",
+    "address": "Vipra Nagar, Beed, Maharashtra, India",
+    "pinCode": "431122",
+    "primaryMobile": "+91 9422931794",
+    "secondaryMobile": "+91 9422650505",
+    "email": "rampushpaagro@gmail.com",
+    "mapsLink": "https://maps.app.goo.gl/mgx98ZDk1ooDFXBg7",
+    "whatsappNumber": "919422931794",
+    "businessHours": "Mon-Sat: 9:00 AM - 6:00 PM"
+  }
+}

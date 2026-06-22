@@ -66,103 +66,152 @@
     <!-- Products Section -->
     <section class="section-padding">
         <div class="container">
-                    <div class="fade-in-up" style="margin-bottom: 4rem;">
-                        <h2 class="text-center" style="margin-bottom: 1rem;">Daily Rates &amp; Availability</h2>
-                        <div id="daily-rates-section"><div class="daily-rates-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-
-                    <div class="rate-card" style="background: white; border: 1px solid var(--color-border); padding: 1.5rem; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); text-align: center;">
-                        <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Wheat</h3>
-                        <p class="text-muted" style="margin-bottom: 1rem; font-size: 0.9rem;">Premium Sortex Cleaned Wheat</p>
-                        <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹3800 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
-                        <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
-                            In Stock
-                        </div>
-                    </div>
-
-                    <div class="rate-card" style="background: white; border: 1px solid var(--color-border); padding: 1.5rem; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); text-align: center;">
-                        <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Jowar</h3>
-                        <p class="text-muted" style="margin-bottom: 1rem; font-size: 0.9rem;">Premium Grade Jowar</p>
-                        <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹2800 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
-                        <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
-                            In Stock
-                        </div>
-                    </div>
-
-                    <div class="rate-card" style="background: white; border: 1px solid var(--color-border); padding: 1.5rem; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); text-align: center;">
-                        <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Bajra</h3>
-                        <p class="text-muted" style="margin-bottom: 1rem; font-size: 0.9rem;">High Quality Bajra</p>
-                        <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹2500 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
-                        <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
-                            In Stock
-                        </div>
-                    </div>
-
-                    <div class="rate-card" style="background: white; border: 1px solid var(--color-border); padding: 1.5rem; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); text-align: center;">
-                        <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Chana</h3>
-                        <p class="text-muted" style="margin-bottom: 1rem; font-size: 0.9rem;">Export Quality Chana</p>
-                        <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹5500 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
-                        <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
-                            In Stock
-                        </div>
-                    </div>
-</div></div>
-                    </div>
-                
-            <div class="products-grid" id="productGrid">
-                
-                <!-- Product Card 1 -->
-                <div class="brand-card fade-in-up">
-                    <div style="height: 200px; overflow: hidden; display:flex; align-items:center; justify-content:center; background:#f8f9fa;">
-                        <img src="/assets/images/mogra.webp" alt="Mogra Product" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                    </div>
-                    <div class="brand-info">
-                        <h4>Mogra</h4>
-                        <p class="text-muted" style="margin-bottom: 1rem;">Premium Sortex Cleaned</p>
-                        <p>Carefully selected and processed to ensure the highest purity and nutrition for your daily needs.</p>
-                        <a href="/contact.html" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; display:block; padding: 0.75rem;">Inquire Now</a>
-                    </div>
+            <div id="dynamic-products-container">
+            <div class="products-header text-center" style="margin-bottom: 2rem;">
+                <p class="text-muted">Last Updated: <strong>22-Jun-2026</strong></p>
+                <div style="margin: 2rem auto; max-width: 600px;">
+                    <input type="text" id="productSearch" class="form-control" placeholder="Search brands or categories..." style="padding: 1rem; font-size: 1.1rem; border-radius: 30px;">
                 </div>
-
-                <!-- Product Card 2 -->
-                <div class="brand-card fade-in-up">
-                    <div style="height: 200px; overflow: hidden; display:flex; align-items:center; justify-content:center; background:#f8f9fa;">
-                        <img src="/assets/images/pranjal.webp" alt="Pranjal Product" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                    </div>
-                    <div class="brand-info">
-                        <h4>Pranjal</h4>
-                        <p class="text-muted" style="margin-bottom: 1rem;">Premium Grade</p>
-                        <p>Known for its rich taste and texture, processed with state-of-the-art machinery to maintain quality.</p>
-                        <a href="/contact.html" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; display:block; padding: 0.75rem;">Inquire Now</a>
-                    </div>
-                </div>
-
-                <!-- Product Card 3 -->
-                <div class="brand-card fade-in-up">
-                    <div style="height: 200px; overflow: hidden; display:flex; align-items:center; justify-content:center; background:#f8f9fa;">
-                        <img src="/assets/images/riddhi_siddhi.webp" alt="Riddhi Siddhi Product" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                    </div>
-                    <div class="brand-info">
-                        <h4>Riddhi Siddhi</h4>
-                        <p class="text-muted" style="margin-bottom: 1rem;">Export Quality</p>
-                        <p>Our finest selection offering unparalleled freshness and consistency in every batch.</p>
-                        <a href="/contact.html" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; display:block; padding: 0.75rem;">Inquire Now</a>
-                    </div>
-                </div>
-
-                <!-- Product Card 4 -->
-                <div class="brand-card fade-in-up">
-                    <div style="height: 200px; overflow: hidden; display:flex; align-items:center; justify-content:center; background:#f8f9fa;">
-                        <img src="/assets/images/yogi.webp" alt="Yogi Product" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                    </div>
-                    <div class="brand-info">
-                        <h4>Yogi</h4>
-                        <p class="text-muted" style="margin-bottom: 1rem;">Wholesome Goodness</p>
-                        <p>Packed with nutrition and processed under strict hygienic conditions for a healthy lifestyle.</p>
-                        <a href="/contact.html" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; display:block; padding: 0.75rem;">Inquire Now</a>
-                    </div>
-                </div>
-
             </div>
+            
+            <div class="category-tabs" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;">
+        <button class="cat-tab-btn active" data-target="cat-cat-jowar" style="padding: 0.75rem 2rem; border-radius: 30px; font-weight: bold; border: 2px solid var(--color-primary); cursor: pointer; transition: 0.3s;">JOWAR</button><button class="cat-tab-btn " data-target="cat-cat-bajra" style="padding: 0.75rem 2rem; border-radius: 30px; font-weight: bold; border: 2px solid var(--color-primary); cursor: pointer; transition: 0.3s;">BAJRA</button><button class="cat-tab-btn " data-target="cat-cat-wheat" style="padding: 0.75rem 2rem; border-radius: 30px; font-weight: bold; border: 2px solid var(--color-primary); cursor: pointer; transition: 0.3s;">WHEAT</button><button class="cat-tab-btn " data-target="cat-cat-chana" style="padding: 0.75rem 2rem; border-radius: 30px; font-weight: bold; border: 2px solid var(--color-primary); cursor: pointer; transition: 0.3s;">CHANA</button></div><div class="categories-content"><div id="cat-cat-jowar" class="cat-pane" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="brand-card fade-in-up search-item" data-name="premium jowar" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                        <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; align-items:center; justify-content:center; color:#64748b;">No Image</div>
+                        <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Premium Jowar</h3>
+                            <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium Grade Jowar, carefully processed to preserve nutritional value.</p>
+                            
+                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹3000 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
+                                <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
+                                    In Stock
+                                </div>
+                            </div>
+                            
+                            <a href="https://wa.me/919422931794?text=Hello%20Rampushpa%20Agro%2C%0A%0AI%20am%20interested%20in%3A%0AProduct%3A%20Jowar%0ABrand%3A%20Premium%20Jowar%0A%0APlease%20share%20details%20and%20current%20pricing." target="_blank" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                    </div>
+                </div><div id="cat-cat-bajra" class="cat-pane" style="display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="brand-card fade-in-up search-item" data-name="high quality bajra" data-category="bajra" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                        <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; align-items:center; justify-content:center; color:#64748b;">No Image</div>
+                        <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">High Quality Bajra</h3>
+                            <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Thoroughly cleaned Pearl Millet with zero impurities.</p>
+                            
+                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹2500 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
+                                <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
+                                    In Stock
+                                </div>
+                            </div>
+                            
+                            <a href="https://wa.me/919422931794?text=Hello%20Rampushpa%20Agro%2C%0A%0AI%20am%20interested%20in%3A%0AProduct%3A%20Bajra%0ABrand%3A%20High%20Quality%20Bajra%0A%0APlease%20share%20details%20and%20current%20pricing." target="_blank" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                    </div>
+                </div><div id="cat-cat-wheat" class="cat-pane" style="display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="brand-card fade-in-up search-item" data-name="mogra" data-category="wheat" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                        <img src="/assets/images/mogra.webp" alt="Mogra" style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">
+                        <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Mogra</h3>
+                            <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Carefully selected and processed to ensure the highest purity and nutrition for your daily needs.</p>
+                            
+                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹3800 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
+                                <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
+                                    In Stock
+                                </div>
+                            </div>
+                            
+                            <a href="https://wa.me/919422931794?text=Hello%20Rampushpa%20Agro%2C%0A%0AI%20am%20interested%20in%3A%0AProduct%3A%20Wheat%0ABrand%3A%20Mogra%0A%0APlease%20share%20details%20and%20current%20pricing." target="_blank" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                    </div>
+                
+                    <div class="brand-card fade-in-up search-item" data-name="pranjal" data-category="wheat" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                        <img src="/assets/images/pranjal.webp" alt="Pranjal" style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">
+                        <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Pranjal</h3>
+                            <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Known for its rich taste and texture, processed with state-of-the-art machinery to maintain quality.</p>
+                            
+                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹3800 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
+                                <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
+                                    In Stock
+                                </div>
+                            </div>
+                            
+                            <a href="https://wa.me/919422931794?text=Hello%20Rampushpa%20Agro%2C%0A%0AI%20am%20interested%20in%3A%0AProduct%3A%20Wheat%0ABrand%3A%20Pranjal%0A%0APlease%20share%20details%20and%20current%20pricing." target="_blank" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                    </div>
+                
+                    <div class="brand-card fade-in-up search-item" data-name="riddhi siddhi" data-category="wheat" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                        <img src="/assets/images/riddhi_siddhi.webp" alt="Riddhi Siddhi" style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">
+                        <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Riddhi Siddhi</h3>
+                            <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Our finest selection offering unparalleled freshness and consistency in every batch.</p>
+                            
+                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹3800 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
+                                <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
+                                    In Stock
+                                </div>
+                            </div>
+                            
+                            <a href="https://wa.me/919422931794?text=Hello%20Rampushpa%20Agro%2C%0A%0AI%20am%20interested%20in%3A%0AProduct%3A%20Wheat%0ABrand%3A%20Riddhi%20Siddhi%0A%0APlease%20share%20details%20and%20current%20pricing." target="_blank" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                    </div>
+                </div><div id="cat-cat-chana" class="cat-pane" style="display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="brand-card fade-in-up search-item" data-name="export quality chana" data-category="chana" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                        <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; align-items:center; justify-content:center; color:#64748b;">No Image</div>
+                        <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Export Quality Chana</h3>
+                            <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Uniform size and premium quality chickpeas.</p>
+                            
+                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹5500 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
+                                <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
+                                    In Stock
+                                </div>
+                            </div>
+                            
+                            <a href="https://wa.me/919422931794?text=Hello%20Rampushpa%20Agro%2C%0A%0AI%20am%20interested%20in%3A%0AProduct%3A%20Chana%0ABrand%3A%20Export%20Quality%20Chana%0A%0APlease%20share%20details%20and%20current%20pricing." target="_blank" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                    </div>
+                </div></div>
+        <script>
+            // Tab Logic
+            document.querySelectorAll('.cat-tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.cat-tab-btn').forEach(b => {
+                        b.classList.remove('active');
+                        b.style.background = 'transparent';
+                        b.style.color = 'var(--color-primary)';
+                    });
+                    document.querySelectorAll('.cat-pane').forEach(p => p.style.display = 'none');
+                    
+                    btn.classList.add('active');
+                    btn.style.background = 'var(--color-primary)';
+                    btn.style.color = 'white';
+                    
+                    const target = btn.getAttribute('data-target');
+                    document.getElementById(target).style.display = 'grid';
+                });
+            });
+            // Init styles
+            if(document.querySelector('.cat-tab-btn.active')) {
+                document.querySelector('.cat-tab-btn.active').style.background = 'var(--color-primary)';
+                document.querySelector('.cat-tab-btn.active').style.color = 'white';
+            }
+
+            // Search Logic
+            document.getElementById('productSearch').addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                document.querySelectorAll('.search-item').forEach(item => {
+                    const name = item.getAttribute('data-name');
+                    const cat = item.getAttribute('data-category');
+                    if(name.includes(term) || cat.includes(term)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+        </div></div></div></div></div></div></div>
         </div>
     </section>
 

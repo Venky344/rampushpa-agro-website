@@ -1,26 +1,89 @@
 {
-  "wheat": {
-    "name": "Wheat",
-    "description": "Premium Sortex Cleaned Wheat",
-    "rate": 3800,
-    "available": true
-  },
-  "jowar": {
-    "name": "Jowar",
-    "description": "Premium Grade Jowar",
-    "rate": 2800,
-    "available": true
-  },
-  "bajra": {
-    "name": "Bajra",
-    "description": "High Quality Bajra",
-    "rate": 2500,
-    "available": true
-  },
-  "chana": {
-    "name": "Chana",
-    "description": "Export Quality Chana",
-    "rate": 5500,
-    "available": true
-  }
+  "lastUpdated": "22-Jun-2026",
+  "categories": [
+    {
+      "id": "cat-jowar",
+      "name": "Jowar",
+      "brands": [
+        {
+          "id": "brand-jowar-1",
+          "name": "Premium Jowar",
+          "description": "Premium Grade Jowar, carefully processed to preserve nutritional value.",
+          "rate": 3000,
+          "unit": "Quintal",
+          "showRate": true,
+          "available": true,
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": "cat-bajra",
+      "name": "Bajra",
+      "brands": [
+        {
+          "id": "brand-bajra-1",
+          "name": "High Quality Bajra",
+          "description": "Thoroughly cleaned Pearl Millet with zero impurities.",
+          "rate": 2500,
+          "unit": "Quintal",
+          "showRate": true,
+          "available": true,
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": "cat-wheat",
+      "name": "Wheat",
+      "brands": [
+        {
+          "id": "brand-wheat-mogra",
+          "name": "Mogra",
+          "description": "Carefully selected and processed to ensure the highest purity and nutrition for your daily needs.",
+          "rate": 3800,
+          "unit": "Quintal",
+          "showRate": true,
+          "available": true,
+          "image": "/assets/images/mogra.webp"
+        },
+        {
+          "id": "brand-wheat-pranjal",
+          "name": "Pranjal",
+          "description": "Known for its rich taste and texture, processed with state-of-the-art machinery to maintain quality.",
+          "rate": 3800,
+          "unit": "Quintal",
+          "showRate": true,
+          "available": true,
+          "image": "/assets/images/pranjal.webp"
+        },
+        {
+          "id": "brand-wheat-riddhi",
+          "name": "Riddhi Siddhi",
+          "description": "Our finest selection offering unparalleled freshness and consistency in every batch.",
+          "rate": 3800,
+          "unit": "Quintal",
+          "showRate": true,
+          "available": true,
+          "image": "/assets/images/riddhi_siddhi.webp"
+        }
+      ]
+    },
+    {
+      "id": "cat-chana",
+      "name": "Chana",
+      "brands": [
+        {
+          "id": "brand-chana-1",
+          "name": "Export Quality Chana",
+          "description": "Uniform size and premium quality chickpeas.",
+          "rate": 5500,
+          "unit": "Quintal",
+          "showRate": true,
+          "available": true,
+          "image": ""
+        }
+      ]
+    }
+  ]
 }
