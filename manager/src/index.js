@@ -180,6 +180,7 @@ ipcMain.handle('save-products', async (event, data) => {
                             </div>
                             
                             <a href="${whatsappLink}" target="_blank" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                        </div>
                     </div>
                 `;
             });

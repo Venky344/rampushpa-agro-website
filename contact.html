@@ -142,9 +142,18 @@
                         <textarea id="message" class="form-control" rows="4" required placeholder="How can we help you?"></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
-                    <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 1rem; text-align: center;">Clicking submit will open your email client to send us the inquiry securely.</p>
+                    <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                    <div id="submit-error" class="error-msg" style="display:none; text-align:center; margin-top:1rem; font-weight:bold; color:#dc2626;">Failed to submit inquiry. Please try again.</div>
+                    <p id="submit-disclaimer" style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 1rem; text-align: center;">Your inquiry is securely sent to our team.</p>
                 </form>
+
+                <!-- Success Message Container -->
+                <div id="form-success" style="display:none; text-align:center; padding: 2rem 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 60px; height: 60px; fill: #16a34a; margin-bottom: 1rem;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                    <h3 style="color: #166534; margin-bottom: 1rem;">Inquiry Submitted Successfully</h3>
+                    <p style="margin-bottom: 2rem; color: var(--color-text-main);">Thank you for contacting Rampushpa Agro Processing.<br>Our team will contact you shortly.</p>
+                    <a id="whatsapp-fallback-btn" href="#" target="_blank" class="btn" style="background: #25D366; color: white; border:none; display:inline-flex; align-items:center; gap:0.5rem; padding: 0.75rem 1.5rem;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width:20px;height:20px;fill:white;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 222.4-99.6 222.4-222 0-59.3-23.1-115-65.4-157zM223.9 411.9c-31.5 0-62.3-8.5-89.4-24.5l-6.4-3.8-66.5 17.4 17.7-64.8-4.2-6.7c-17.6-28-26.9-60.5-26.9-94.1 0-103.5 84.3-187.8 187.9-187.8 50.2 0 97.4 19.5 132.8 55 35.4 35.4 54.9 82.5 54.9 133.1 0 103.6-84.3 187.8-187.8 187.8z"/></svg>Chat on WhatsApp (Optional)</a>
+                </div>
             </div>
         </div>
 
@@ -241,19 +250,24 @@
 
     <!-- Form Validation Script -->
     <script>
-        function submitInquiry(event) {
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw3rr86M9uQgcrV7Ks0Jp9X_5SrpT_EqpyRYbFMRdBKmmGTfDVIx4woo0fsu5yog_TYFQ/exec';
+
+        async function submitInquiry(event) {
             event.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            const errorMsg = document.getElementById('mobile-error');
+            const submitError = document.getElementById('submit-error');
             
             const name = document.getElementById('name').value.trim();
             const mobile = document.getElementById('mobile').value.trim();
             const city = document.getElementById('city').value.trim();
             const product = document.getElementById('product').value;
             const message = document.getElementById('message').value.trim();
-            const errorMsg = document.getElementById('mobile-error');
 
-            // Basic mobile validation (must contain at least 10 digits)
+            // Strict 10-digit mobile validation
             const mobileNumbers = mobile.replace(/\D/g, '');
-            if (mobileNumbers.length < 10) {
+            if (mobileNumbers.length !== 10) {
                 errorMsg.style.display = 'block';
                 document.getElementById('mobile').focus();
                 return;
@@ -261,21 +275,45 @@
                 errorMsg.style.display = 'none';
             }
 
-            // Construct email
-            const subject = encodeURIComponent(`Website Inquiry: ${product} - ${name} (${city})`);
-            const body = encodeURIComponent(
-                `Hello Rampushpa Agro Processing,\n\n` +
-                `I would like to inquire about the following:\n\n` +
-                `Name: ${name}\n` +
-                `Mobile: ${mobile}\n` +
-                `City: ${city}\n` +
-                `Interest: ${product}\n\n` +
-                `Message:\n${message}\n\n` +
-                `Please contact me back at your earliest convenience.`
-            );
+            submitError.style.display = 'none';
+            btn.textContent = 'Submitting...';
+            btn.disabled = true;
 
-            // Redirect to mail client
-            window.location.href = `mailto:rampushpaagro@gmail.com?subject=${subject}&body=${body}`;
+            const payload = {
+                name: name,
+                mobile: mobile,
+                city: city,
+                product: product,
+                message: message
+            };
+
+            try {
+                // Submit to Google Apps Script
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // required for Google Apps Script execution from browser
+                    cache: 'no-cache',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                // Since no-cors hides the true response status, assuming no exception means it hit the script.
+                document.getElementById('inquiryForm').style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
+
+                // Setup optional WhatsApp fallback button
+                const waMsg = encodeURIComponent(
+                    `Hello Rampushpa Agro,\n\nI recently submitted an inquiry on your website.\n\n` +
+                    `Name: ${name}\nMobile: ${mobile}\nCity: ${city}\nInterest: ${product}\n\n${message}`
+                );
+                document.getElementById('whatsapp-fallback-btn').href = `https://wa.me/919422931794?text=${waMsg}`;
+                
+            } catch (error) {
+                console.error('Submission failed:', error);
+                submitError.style.display = 'block';
+                btn.textContent = 'Submit Inquiry';
+                btn.disabled = false;
+            }
         }
     </script>
     <script src="/js/script.js" defer></script>

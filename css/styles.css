@@ -321,6 +321,10 @@ img {
     padding-bottom: var(--spacing-md);
     background: linear-gradient(135deg, #fdfbf7 0%, #f3f4f6 100%);
     overflow: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
 }
 
 .hero-container {
@@ -703,7 +707,6 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     gap: 1.5rem;
     margin-bottom: 4rem;
-    min-height: 200px;
 }
 
 .brand-card {
@@ -898,7 +901,6 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     gap: 1.5rem;
     margin-bottom: 4rem;
-    min-height: 200px;
 }
 
 .brand-card {
