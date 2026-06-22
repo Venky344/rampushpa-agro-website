@@ -1,0 +1,26 @@
+{
+  "wheat": {
+    "name": "Wheat",
+    "description": "Premium Sortex Cleaned Wheat",
+    "rate": 3800,
+    "available": true
+  },
+  "jowar": {
+    "name": "Jowar",
+    "description": "Premium Grade Jowar",
+    "rate": 2800,
+    "available": true
+  },
+  "bajra": {
+    "name": "Bajra",
+    "description": "High Quality Bajra",
+    "rate": 2500,
+    "available": true
+  },
+  "chana": {
+    "name": "Chana",
+    "description": "Export Quality Chana",
+    "rate": 5500,
+    "available": true
+  }
+}
