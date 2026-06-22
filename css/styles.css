@@ -304,6 +304,60 @@ img {
     color: var(--color-accent);
 }
 
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.dropdown > a::after {
+    content: '▾';
+    font-size: 0.8rem;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--border-radius-md);
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all var(--transition-fast);
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--color-text-main);
+    font-size: 0.9rem;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--color-bg-light);
+    color: var(--color-primary);
+}
+
 .mobile-cta,
 .mobile-menu-btn {
     display: none;
