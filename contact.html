@@ -104,46 +104,45 @@
             </div>
 
             <!-- Inquiry Form -->
-            <div class="fade-in-up" style="background: white; padding: 2rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--color-border);">
-                <h2 style="margin-bottom: 1.5rem;">Send an Inquiry</h2>
+            <div class="fade-in-up inquiry-form-container">
+                <h2>Send an Inquiry</h2>
                 <form id="inquiryForm" onsubmit="submitInquiry(event)">
                     <div class="form-group">
-                        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Full Name *</label>
+                        <label for="name">Full Name *</label>
                         <input type="text" id="name" class="form-control" required placeholder="Enter your name">
                     </div>
                     
                     <div class="form-group">
-                        <label for="mobile" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Mobile Number *</label>
+                        <label for="mobile">Mobile Number *</label>
                         <input type="tel" id="mobile" class="form-control" required placeholder="Enter 10-digit number">
                         <span id="mobile-error" class="error-msg">Please enter a valid 10-digit mobile number.</span>
                     </div>
 
                     <div class="form-group">
-                        <label for="city" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">City/Town *</label>
+                        <label for="city">City/Town *</label>
                         <input type="text" id="city" class="form-control" required placeholder="Your location">
                     </div>
 
                     <div class="form-group">
-                        <label for="product" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Product / Service Interest *</label>
+                        <label for="product">Product / Service Interest *</label>
                         <select id="product" class="form-control" required>
                             <option value="">-- Select an option --</option>
                             <option value="Wheat Cleaning">Wheat Cleaning</option>
                             <option value="Jowar Processing">Jowar Processing</option>
                             <option value="Bajra Processing">Bajra Processing</option>
                             <option value="Chana Cleaning">Chana Cleaning</option>
-
                             <option value="Bulk Purchase">Bulk Purchase (Mogra, Yogi, etc.)</option>
                             <option value="Other">Other Inquiry</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message *</label>
+                        <label for="message">Message *</label>
                         <textarea id="message" class="form-control" rows="4" required placeholder="How can we help you?"></textarea>
                     </div>
 
-                    <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
-                    <div id="submit-error" class="error-msg" style="display:none; text-align:center; margin-top:1rem; font-weight:bold; color:#dc2626;">Failed to submit inquiry. Please try again.</div>
+                    <button type="submit" id="submitBtn" class="btn btn-primary form-submit-btn">Submit Inquiry</button>
+                    <div id="submit-error" class="error-msg" style="display:none; text-align:center; margin-top:1rem; font-weight:bold;">Failed to submit inquiry. Please try again.</div>
                     <p id="submit-disclaimer" style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 1rem; text-align: center;">Your inquiry is securely sent to our team.</p>
                 </form>
 
