@@ -85,109 +85,204 @@
             </div>
             
             <div class="category-tabs" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;">
-        <button class="cat-tab-btn active" data-target="cat-cat-jowar" style="padding: 0.75rem 2rem; border-radius: 30px; font-weight: bold; border: 2px solid var(--color-primary); cursor: pointer; transition: 0.3s;">JOWAR</button><button class="cat-tab-btn " data-target="cat-cat-bajra" style="padding: 0.75rem 2rem; border-radius: 30px; font-weight: bold; border: 2px solid var(--color-primary); cursor: pointer; transition: 0.3s;">BAJRA</button><button class="cat-tab-btn " data-target="cat-cat-wheat" style="padding: 0.75rem 2rem; border-radius: 30px; font-weight: bold; border: 2px solid var(--color-primary); cursor: pointer; transition: 0.3s;">WHEAT</button><button class="cat-tab-btn " data-target="cat-cat-chana" style="padding: 0.75rem 2rem; border-radius: 30px; font-weight: bold; border: 2px solid var(--color-primary); cursor: pointer; transition: 0.3s;">CHANA</button></div><div class="categories-content"><div id="cat-cat-jowar" class="cat-pane" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div class="brand-card fade-in-up search-item" data-name="premium jowar" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                        <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; align-items:center; justify-content:center; color:#64748b;">No Image</div>
-                        <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
-                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Premium Jowar</h3>
-                            <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium Grade Jowar, carefully processed to preserve nutritional value.</p>
-                            
-                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
-                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹3000 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
-                                <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
-                                    In Stock
-                                </div>
-                            </div>
-                            
-                            <a href="https://wa.me/919422931794?text=Hello%20Rampushpa%20Agro%2C%0A%0AI%20am%20interested%20in%3A%0AProduct%3A%20Jowar%0ABrand%3A%20Premium%20Jowar%0A%0APlease%20share%20details%20and%20current%20pricing." target="_blank" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
-                        </div>
+        <button class="cat-tab-btn active" data-target="cat-cat-wheat" style="padding: 0.75rem 2rem; border-radius: 30px; font-weight: bold; border: 2px solid var(--color-primary); cursor: pointer; transition: 0.3s;">WHEAT</button>
+        <button class="cat-tab-btn" data-target="cat-cat-jowar" style="padding: 0.75rem 2rem; border-radius: 30px; font-weight: bold; border: 2px solid var(--color-primary); cursor: pointer; transition: 0.3s;">JOWAR</button>
+        <button class="cat-tab-btn" data-target="cat-cat-bajra" style="padding: 0.75rem 2rem; border-radius: 30px; font-weight: bold; border: 2px solid var(--color-primary); cursor: pointer; transition: 0.3s;">BAJRA</button>
+        <button class="cat-tab-btn" data-target="cat-cat-chana" style="padding: 0.75rem 2rem; border-radius: 30px; font-weight: bold; border: 2px solid var(--color-primary); cursor: pointer; transition: 0.3s;">CHANA</button>
+    </div>
+    <div class="categories-content">
+        <!-- WHEAT -->
+        <div id="cat-cat-wheat" class="cat-pane" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <!-- Uttam -->
+            <div class="brand-card fade-in-up search-item" data-name="uttam" data-category="wheat" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#64748b;">
+                    <span style="font-weight:bold; font-size:1.2rem; color:var(--color-primary);">Uttam</span>
+                    <span style="font-size:0.9rem; color:#475569;">Wheat</span>
+                    <span style="font-size:0.8rem; margin-top:0.5rem;">Image Coming Soon</span>
+                </div>
+                <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Uttam</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Wheat processed to the highest purity standards.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">Contact for Current Rate</div>
                     </div>
-                </div><div id="cat-cat-bajra" class="cat-pane" style="display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div class="brand-card fade-in-up search-item" data-name="high quality bajra" data-category="bajra" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                        <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; align-items:center; justify-content:center; color:#64748b;">No Image</div>
-                        <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
-                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">High Quality Bajra</h3>
-                            <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Thoroughly cleaned Pearl Millet with zero impurities.</p>
-                            
-                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
-                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹2500 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
-                                <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
-                                    In Stock
-                                </div>
-                            </div>
-                            
-                            <a href="https://wa.me/919422931794?text=Hello%20Rampushpa%20Agro%2C%0A%0AI%20am%20interested%20in%3A%0AProduct%3A%20Bajra%0ABrand%3A%20High%20Quality%20Bajra%0A%0APlease%20share%20details%20and%20current%20pricing." target="_blank" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
-                        </div>
+                    <a href="/contact.html" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                </div>
+            </div>
+            <!-- Sarvottam -->
+            <div class="brand-card fade-in-up search-item" data-name="sarvottam" data-category="wheat" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#64748b;">
+                    <span style="font-weight:bold; font-size:1.2rem; color:var(--color-primary);">Sarvottam</span>
+                    <span style="font-size:0.9rem; color:#475569;">Wheat</span>
+                    <span style="font-size:0.8rem; margin-top:0.5rem;">Image Coming Soon</span>
+                </div>
+                <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Sarvottam</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Wheat processed to the highest purity standards.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">Contact for Current Rate</div>
                     </div>
-                </div><div id="cat-cat-wheat" class="cat-pane" style="display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div class="brand-card fade-in-up search-item" data-name="mogra" data-category="wheat" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                        <img src="/assets/images/mogra.webp" alt="Mogra" style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">
-                        <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
-                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Mogra</h3>
-                            <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Carefully selected and processed to ensure the highest purity and nutrition for your daily needs.</p>
-                            
-                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
-                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹3800 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
-                                <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
-                                    In Stock
-                                </div>
-                            </div>
-                            
-                            <a href="https://wa.me/919422931794?text=Hello%20Rampushpa%20Agro%2C%0A%0AI%20am%20interested%20in%3A%0AProduct%3A%20Wheat%0ABrand%3A%20Mogra%0A%0APlease%20share%20details%20and%20current%20pricing." target="_blank" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
-                        </div>
+                    <a href="/contact.html" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- JOWAR -->
+        <div id="cat-cat-jowar" class="cat-pane" style="display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <!-- Pranjal -->
+            <div class="brand-card fade-in-up search-item" data-name="pranjal" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#64748b;">
+                    <span style="font-weight:bold; font-size:1.2rem; color:var(--color-primary);">Pranjal</span>
+                    <span style="font-size:0.9rem; color:#475569;">Jowar</span>
+                    <span style="font-size:0.8rem; margin-top:0.5rem;">Image Coming Soon</span>
+                </div>
+                <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Pranjal</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Jowar processed to the highest purity standards.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">Contact for Current Rate</div>
                     </div>
-                
-                    <div class="brand-card fade-in-up search-item" data-name="pranjal" data-category="wheat" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                        <img src="/assets/images/pranjal.webp" alt="Pranjal" style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">
-                        <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
-                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Pranjal</h3>
-                            <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Known for its rich taste and texture, processed with state-of-the-art machinery to maintain quality.</p>
-                            
-                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
-                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹3800 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
-                                <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
-                                    In Stock
-                                </div>
-                            </div>
-                            
-                            <a href="https://wa.me/919422931794?text=Hello%20Rampushpa%20Agro%2C%0A%0AI%20am%20interested%20in%3A%0AProduct%3A%20Wheat%0ABrand%3A%20Pranjal%0A%0APlease%20share%20details%20and%20current%20pricing." target="_blank" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
-                        </div>
+                    <a href="/contact.html" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                </div>
+            </div>
+            <!-- Mogra -->
+            <div class="brand-card fade-in-up search-item" data-name="mogra" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#64748b;">
+                    <span style="font-weight:bold; font-size:1.2rem; color:var(--color-primary);">Mogra</span>
+                    <span style="font-size:0.9rem; color:#475569;">Jowar</span>
+                    <span style="font-size:0.8rem; margin-top:0.5rem;">Image Coming Soon</span>
+                </div>
+                <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Mogra</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Jowar processed to the highest purity standards.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">Contact for Current Rate</div>
                     </div>
-                
-                    <div class="brand-card fade-in-up search-item" data-name="riddhi siddhi" data-category="wheat" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                        <img src="/assets/images/riddhi_siddhi.webp" alt="Riddhi Siddhi" style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">
-                        <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
-                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Riddhi Siddhi</h3>
-                            <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Our finest selection offering unparalleled freshness and consistency in every batch.</p>
-                            
-                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
-                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹3800 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
-                                <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
-                                    In Stock
-                                </div>
-                            </div>
-                            
-                            <a href="https://wa.me/919422931794?text=Hello%20Rampushpa%20Agro%2C%0A%0AI%20am%20interested%20in%3A%0AProduct%3A%20Wheat%0ABrand%3A%20Riddhi%20Siddhi%0A%0APlease%20share%20details%20and%20current%20pricing." target="_blank" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
-                        </div>
+                    <a href="/contact.html" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                </div>
+            </div>
+            <!-- Riddhi-Siddhi -->
+            <div class="brand-card fade-in-up search-item" data-name="riddhi-siddhi" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#64748b;">
+                    <span style="font-weight:bold; font-size:1.2rem; color:var(--color-primary);">Riddhi-Siddhi</span>
+                    <span style="font-size:0.9rem; color:#475569;">Jowar</span>
+                    <span style="font-size:0.8rem; margin-top:0.5rem;">Image Coming Soon</span>
+                </div>
+                <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Riddhi-Siddhi</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Jowar processed to the highest purity standards.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">Contact for Current Rate</div>
                     </div>
-                </div><div id="cat-cat-chana" class="cat-pane" style="display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div class="brand-card fade-in-up search-item" data-name="export quality chana" data-category="chana" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                        <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; align-items:center; justify-content:center; color:#64748b;">No Image</div>
-                        <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
-                            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Export Quality Chana</h3>
-                            <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Uniform size and premium quality chickpeas.</p>
-                            
-                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
-                                <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">₹5500 <span style="font-size:1rem; color:var(--color-text-main);">/ Quintal</span></div>
-                                <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; background: #dcfce7; color: #166534;">
-                                    In Stock
-                                </div>
-                            </div>
-                            
-                            <a href="https://wa.me/919422931794?text=Hello%20Rampushpa%20Agro%2C%0A%0AI%20am%20interested%20in%3A%0AProduct%3A%20Chana%0ABrand%3A%20Export%20Quality%20Chana%0A%0APlease%20share%20details%20and%20current%20pricing." target="_blank" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
-                        </div>
+                    <a href="/contact.html" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                </div>
+            </div>
+            <!-- Yogi -->
+            <div class="brand-card fade-in-up search-item" data-name="yogi" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#64748b;">
+                    <span style="font-weight:bold; font-size:1.2rem; color:var(--color-primary);">Yogi</span>
+                    <span style="font-size:0.9rem; color:#475569;">Jowar</span>
+                    <span style="font-size:0.8rem; margin-top:0.5rem;">Image Coming Soon</span>
+                </div>
+                <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Yogi</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Jowar processed to the highest purity standards.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">Contact for Current Rate</div>
                     </div>
-                </div></div>
+                    <a href="/contact.html" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                </div>
+            </div>
+            <!-- Namo -->
+            <div class="brand-card fade-in-up search-item" data-name="namo" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#64748b;">
+                    <span style="font-weight:bold; font-size:1.2rem; color:var(--color-primary);">Namo</span>
+                    <span style="font-size:0.9rem; color:#475569;">Jowar</span>
+                    <span style="font-size:0.8rem; margin-top:0.5rem;">Image Coming Soon</span>
+                </div>
+                <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Namo</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Jowar processed to the highest purity standards.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">Contact for Current Rate</div>
+                    </div>
+                    <a href="/contact.html" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                </div>
+            </div>
+            <!-- Gajraj -->
+            <div class="brand-card fade-in-up search-item" data-name="gajraj" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#64748b;">
+                    <span style="font-weight:bold; font-size:1.2rem; color:var(--color-primary);">Gajraj</span>
+                    <span style="font-size:0.9rem; color:#475569;">Jowar</span>
+                    <span style="font-size:0.8rem; margin-top:0.5rem;">Image Coming Soon</span>
+                </div>
+                <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Gajraj</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Jowar processed to the highest purity standards.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">Contact for Current Rate</div>
+                    </div>
+                    <a href="/contact.html" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- BAJRA -->
+        <div id="cat-cat-bajra" class="cat-pane" style="display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <!-- Village Gold -->
+            <div class="brand-card fade-in-up search-item" data-name="village gold" data-category="bajra" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#64748b;">
+                    <span style="font-weight:bold; font-size:1.2rem; color:var(--color-primary);">Village Gold</span>
+                    <span style="font-size:0.9rem; color:#475569;">Bajra</span>
+                    <span style="font-size:0.8rem; margin-top:0.5rem;">Image Coming Soon</span>
+                </div>
+                <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Village Gold</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Bajra processed to the highest purity standards.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">Contact for Current Rate</div>
+                    </div>
+                    <a href="/contact.html" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                </div>
+            </div>
+            <!-- Master Chef -->
+            <div class="brand-card fade-in-up search-item" data-name="master chef" data-category="bajra" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#64748b;">
+                    <span style="font-weight:bold; font-size:1.2rem; color:var(--color-primary);">Master Chef</span>
+                    <span style="font-size:0.9rem; color:#475569;">Bajra</span>
+                    <span style="font-size:0.8rem; margin-top:0.5rem;">Image Coming Soon</span>
+                </div>
+                <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Master Chef</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Bajra processed to the highest purity standards.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">Contact for Current Rate</div>
+                    </div>
+                    <a href="/contact.html" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHANA -->
+        <div id="cat-cat-chana" class="cat-pane" style="display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <!-- Kasturi -->
+            <div class="brand-card fade-in-up search-item" data-name="kasturi" data-category="chana" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
+                <div style="width: 100%; height: 200px; background: #e2e8f0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#64748b;">
+                    <span style="font-weight:bold; font-size:1.2rem; color:var(--color-primary);">Kasturi</span>
+                    <span style="font-size:0.9rem; color:#475569;">Chana</span>
+                    <span style="font-size:0.8rem; margin-top:0.5rem;">Image Coming Soon</span>
+                </div>
+                <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Kasturi</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Chana processed to the highest purity standards.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align:center;">
+                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--color-accent); margin-bottom: 0.5rem;">Contact for Current Rate</div>
+                    </div>
+                    <a href="/contact.html" class="btn btn-primary" style="width: 100%; text-align:center;">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
         <script>
             // Tab Logic
             document.querySelectorAll('.cat-tab-btn').forEach(btn => {
@@ -213,9 +308,22 @@
                 document.querySelector('.cat-tab-btn.active').style.color = 'white';
             }
 
-            // Search Logic
+                        // Search Logic
             document.getElementById('productSearch').addEventListener('input', (e) => {
                 const term = e.target.value.toLowerCase();
+                
+                if (term) {
+                    // Show all panes during search
+                    document.querySelectorAll('.cat-pane').forEach(p => p.style.display = 'grid');
+                    document.querySelector('.category-tabs').style.display = 'none';
+                } else {
+                    // Restore tabs
+                    document.querySelector('.category-tabs').style.display = 'flex';
+                    const activeTab = document.querySelector('.cat-tab-btn.active').getAttribute('data-target');
+                    document.querySelectorAll('.cat-pane').forEach(p => p.style.display = 'none');
+                    document.getElementById(activeTab).style.display = 'grid';
+                }
+
                 document.querySelectorAll('.search-item').forEach(item => {
                     const name = item.getAttribute('data-name');
                     const cat = item.getAttribute('data-category');
