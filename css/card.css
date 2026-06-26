@@ -511,19 +511,23 @@ p, span, div {
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%) translateZ(0);
+    transform: translateX(-50%) translateZ(0);
     width: 100%;
     max-width: var(--card-max-width);
     background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 -5px 20px rgba(0,0,0,0.08);
-    z-index: 100;
+    z-index: 1000;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    padding: 5px 0.5rem calc(5px + env(safe-area-inset-bottom, 0px));
+    padding: 5px 0.5rem;
+    padding-bottom: calc(5px + env(safe-area-inset-bottom, 0px));
+    will-change: transform;
 }
 
 .sticky-btn {
