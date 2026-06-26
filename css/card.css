@@ -10,7 +10,7 @@
     --glass-border: rgba(255, 255, 255, 0.4);
     --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
     --action-bar-height: 70px;
-    
+
     /* Fluid Typography (min, preferred, max) */
     --text-h1: clamp(1.8rem, 4vw, 2.5rem);
     --text-h2: clamp(1.4rem, 3vw, 1.8rem);
@@ -41,7 +41,7 @@
     background: var(--card-bg);
     min-height: 100vh;
     min-height: 100dvh;
-    box-shadow: 0 0 40px rgba(0,0,0,0.1);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -65,7 +65,9 @@
     margin-bottom: 0.5rem;
 }
 
-p, span, div {
+p,
+span,
+div {
     font-size: var(--text-body);
 }
 
@@ -78,19 +80,41 @@ p, span, div {
 
 /* Animations */
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .animate-fade-in {
@@ -121,7 +145,9 @@ p, span, div {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-    .animate-on-scroll, .animate-slide-up {
+
+    .animate-on-scroll,
+    .animate-slide-up {
         opacity: 1;
         transform: none;
     }
@@ -141,7 +167,10 @@ p, span, div {
 
 .hero-bg-effect {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M10 10c10-5 20-5 30 0s20 5 30 0" stroke="rgba(255,255,255,0.05)" fill="none" stroke-width="2"/></svg>');
     background-size: 50px 50px;
     opacity: 0.5;
@@ -160,7 +189,7 @@ p, span, div {
     background: white;
     border-radius: 50%;
     padding: clamp(10px, 2vw, 20px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -229,7 +258,8 @@ p, span, div {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
     overflow: hidden;
-    min-height: 44px; /* Touch target accessibility */
+    min-height: 44px;
+    /* Touch target accessibility */
     min-width: 44px;
 }
 
@@ -246,14 +276,15 @@ p, span, div {
     transition: width 0.4s ease-out, height 0.4s ease-out;
 }
 
-.action-btn:hover::after, .action-btn:active::after {
+.action-btn:hover::after,
+.action-btn:active::after {
     width: 300px;
     height: 300px;
 }
 
 .action-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     border-color: var(--color-primary);
 }
 
@@ -294,7 +325,7 @@ p, span, div {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .overview-item {
@@ -330,7 +361,7 @@ p, span, div {
     border-radius: 16px;
     text-align: center;
     box-shadow: var(--card-shadow);
-    border: 1px solid rgba(0,0,0,0.03);
+    border: 1px solid rgba(0, 0, 0, 0.03);
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -371,7 +402,7 @@ p, span, div {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(0,0,0,0.03);
+    border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .stat-icon {
@@ -480,7 +511,7 @@ p, span, div {
 }
 
 .nav-links-grid a {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: white;
     padding: 1rem;
     border-radius: 10px;
@@ -494,8 +525,9 @@ p, span, div {
     justify-content: center;
 }
 
-.nav-links-grid a:hover, .nav-links-grid a:focus-visible {
-    background: rgba(255,255,255,0.2);
+.nav-links-grid a:hover,
+.nav-links-grid a:focus-visible {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* Footer */
@@ -510,9 +542,9 @@ p, span, div {
 .sticky-action-bar {
     position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateZ(0);
+    transform: translateX(-50%) translateZ(0);
     width: 100%;
     max-width: var(--card-max-width);
     background: rgba(255, 255, 255, 0.95);
@@ -521,12 +553,13 @@ p, span, div {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.08);
     z-index: 1000;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     padding: 5px 0.5rem;
     padding-bottom: calc(5px + env(safe-area-inset-bottom, 0px));
+    will-change: transform;
 }
 
 .sticky-btn {
@@ -536,9 +569,11 @@ p, span, div {
     justify-content: center;
     text-decoration: none;
     color: var(--color-text-muted);
-    font-size: 0.75rem; /* Specific fixed size for bottom bar */
+    font-size: 0.75rem;
+    /* Specific fixed size for bottom bar */
     flex: 1;
-    min-height: 60px; /* Comfortable touch target */
+    min-height: 60px;
+    /* Comfortable touch target */
     transition: color 0.3s ease;
     border: none;
     background: transparent;
@@ -551,7 +586,8 @@ p, span, div {
     margin-bottom: 0.2rem;
 }
 
-.sticky-btn:hover, .sticky-btn:focus-visible {
+.sticky-btn:hover,
+.sticky-btn:focus-visible {
     color: var(--color-primary);
     outline: none;
 }
@@ -580,11 +616,11 @@ p, span, div {
     .card-actions {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .overview-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .overview-item.full-width {
         grid-column: 1 / -1;
     }
@@ -596,31 +632,33 @@ p, span, div {
         border-radius: 30px;
         margin: clamp(2rem, 5vh, 4rem) auto;
         min-height: auto;
-        border: 1px solid rgba(0,0,0,0.05);
+        border: 1px solid rgba(0, 0, 0, 0.05);
     }
-    
+
     .card-body {
         /* Reduce padding as sticky bar moves to floating dock */
-        padding-bottom: clamp(2rem, 5vh, 4rem); 
+        padding-bottom: clamp(2rem, 5vh, 4rem);
     }
-    
+
     .card-actions {
         grid-template-columns: repeat(4, 1fr);
     }
-    
-    .product-cards, .stats-grid, .gallery-grid {
+
+    .product-cards,
+    .stats-grid,
+    .gallery-grid {
         grid-template-columns: repeat(4, 1fr);
     }
-    
+
     .sticky-action-bar {
         border-radius: 40px;
         bottom: 20px;
         width: 90%;
         max-width: 500px;
         padding: 5px 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     }
-    
+
     .sticky-btn.highlight {
         transform: translateY(-20px);
         box-shadow: 0 8px 25px rgba(1, 147, 64, 0.25);
