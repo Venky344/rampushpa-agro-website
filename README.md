@@ -62,5 +62,5 @@ Then navigate to `http://localhost:3000` in your browser.
 **Rampushpa Agro Processing**
 - **Location**: Vipra Nagar, Beed, Maharashtra, India 431122
 - **Email**: rampushpaagro@gmail.com
-- **Phone**: +91 9422931794, +91 9422650505
+- **Phone**: +91 7721931794, +91 7588950505
 - **Website**: [https://rampushpaagro.in](https://rampushpaagro.in)

@@ -33,33 +33,39 @@
 
 <body>
     <!-- Header -->
-    <header class="main-header">
+        <header class="main-header">
         <div class="container header-content">
             <a href="/" class="logo">
                 <img src="/assets/logos/rap_logo.webp" alt="Rampushpa Agro Processing Logo" loading="lazy">
                 <span>Rampushpa Agro</span>
             </a>
-            <nav>
+            <nav class="nav-container">
                 <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/services.html">Services</a></li>
-                    <li><a href="/products.html" class="active">Products</a></li>
-                    <li><a href="/gallery.html">Gallery</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/" class="nav-item">Home</a></li>
+                    <li><a href="/about.html" class="nav-item">About</a></li>
+                    <li><a href="/products.html" class="nav-item active">Products</a></li>
+                    <li><a href="/services.html" class="nav-item">Infrastructure</a></li>
+                    <li><a href="/gallery.html" class="nav-item">Gallery</a></li>
+                    <li><a href="/contact.html" class="nav-item">Contact</a></li>
                     <li class="dropdown">
-                        <a href="#">Processing Services</a>
+                        <a href="#" class="nav-item dropdown-toggle">Resources <span class="chevron">▼</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/jowar-cleaning-maharashtra.html">Jowar Cleaning</a></li>
-                            <li><a href="/bajra-cleaning-maharashtra.html">Bajra Cleaning</a></li>
-                            <li><a href="/wheat-cleaning-maharashtra.html">Wheat Cleaning</a></li>
-                            <li><a href="/chana-cleaning-maharashtra.html">Chana Cleaning</a></li>
-                            <li><a href="/grain-cleaning-plant-beed.html">Grain Cleaning Plant</a></li>
+                            <li><a href="/company-profile">Company Profile (View Online)</a></li>
+                            <li><a href="/company-profile?download=true">Download Brochure (PDF)</a></li>
+                            <li><a href="/card.html">Digital Business Card</a></li>
+                            <li><a href="https://maps.app.goo.gl/pSyHA8PP8LjzmRVs6" target="_blank" rel="noopener noreferrer">Get Directions</a></li>
+                            <li><a href="https://www.instagram.com/rampushpa_agro?igsh=MXRmenFrb2p3amp6cg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                         </ul>
                     </li>
+                    <li class="mobile-only"><a href="/contact.html" class="btn btn-quote-mobile">Get Quote</a></li>
                 </ul>
+                <div class="header-actions">
+                    <a href="/contact.html" class="btn btn-quote">Get Quote</a>
+                </div>
                 <div class="mobile-menu-btn" aria-label="Toggle Menu">
-                    <span></span><span></span><span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </nav>
         </div>
@@ -365,13 +371,15 @@
                     <li><a href="/services.html">Services</a></li>
                     <li><a href="/products.html">Products</a></li>
                     <li><a href="/gallery.html">Gallery</a></li>
+                    <li><a href="/company-profile">Company Profile</a></li>
+                    <li><a href="/company-profile?download=true" style="color: var(--color-accent); font-weight: bold;">Download Profile</a></li>
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
                 <h4>Contact</h4>
                 <p>Email: <a href="mailto:rampushpaagro@gmail.com">rampushpaagro@gmail.com</a></p>
-                <p>Phone: <a href="tel:+919422931794">+91 9422931794</a></p>
+                <p>Phone: <a href="tel:+917721931794">+91 7721931794</a></p>
                 <p>Location: Beed, Maharashtra, 431122 </p>
             </div>
         </div>

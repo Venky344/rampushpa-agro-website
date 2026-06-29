@@ -8,24 +8,24 @@ const contactConfig = {
     tagline: "Quality Grains. Pure Trust.",
     established: "2017",
     phones: [
-        { label: "Primary", number: "+919422931794", display: "+91 9422931794" },
-        { label: "Secondary", number: "+919422650505", display: "+91 9422650505" }
+        { label: "Sales 1", number: "+917721931794", display: "+91 7721931794" },
+        { label: "Sales 2", number: "+917588950505", display: "+91 7588950505" }
     ],
     email: "rampushpaagro@gmail.com",
     website: "https://rampushpaagro.in",
     address: {
-        street: "PLOT C/15",
+        street: "PLOT C/15 MIDC",
         city: "BEED",
         state: "Maharashtra",
         pincode: "431122",
         country: "India",
-        display: "PLOT C/15, BEED - 431122"
+        display: "PLOT C/15 MIDC, BEED - 431122"
     },
     socials: {
         instagram: "https://www.instagram.com/rampushpa_agro?igsh=MXRmenFrb2p3amp6cg%3D%3D&utm_source=qr",
         facebook: "https://www.facebook.com/share/1CnvmJxfPW/?mibextid=wwXIfr"
     },
-    brochureUrl: "#" // Replace with actual PDF URL when available
+    brochureUrl: "/company-profile"
 };
 
 // Make it available globally

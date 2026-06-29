@@ -670,3 +670,203 @@ img {
     height: auto;
     display: block;
 }
+
+/* Modal Overlay & Containers */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-container {
+    background: #ffffff;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 24px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    border: 1px solid rgba(1, 147, 64, 0.1);
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-family: var(--font-heading, 'Outfit', sans-serif);
+    font-size: 1.25rem;
+    color: var(--color-primary, #019340);
+    font-weight: 600;
+}
+
+.modal-close {
+    background: #f1f5f9;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.modal-info-text {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+}
+
+.contact-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+    gap: 1rem;
+}
+
+.contact-option:hover {
+    border-color: rgba(1, 147, 64, 0.2);
+    background: #f4fbf7;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.contact-number {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0f172a;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-number:hover {
+    color: var(--color-primary, #019340);
+}
+
+.contact-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.contact-action-btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: all 0.2s;
+    border: none;
+    font-family: var(--font-body, 'Inter', sans-serif);
+}
+
+.contact-action-btn.dial-btn {
+    background-color: var(--color-primary, #019340);
+    color: #ffffff;
+}
+
+.contact-action-btn.dial-btn:hover {
+    background-color: var(--color-primary-dark, #006b2e);
+}
+
+.contact-action-btn.copy-btn {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+.contact-action-btn.copy-btn:hover {
+    background-color: #cbd5e1;
+    color: #0f172a;
+}
+
+.contact-action-btn.wa-btn {
+    background-color: #25D366;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.contact-action-btn.wa-btn:hover {
+    background-color: #1ebe57;
+}
+
+/* Mobile Bottom Sheet specific logic */
+@media (max-width: 600px) {
+    .modal-overlay {
+        align-items: flex-end;
+    }
+    
+    .modal-container {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 24px 24px 0 0;
+        transform: translateY(100%);
+    }
+    
+    .modal-overlay.active .modal-container {
+        transform: translateY(0);
+    }
+}

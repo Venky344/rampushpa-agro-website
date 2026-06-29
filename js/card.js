@@ -9,14 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (el) el.href = url;
         };
 
-        setLink('btn-call', `tel:${config.phones[0].number}`);
-        setLink('btn-whatsapp', `https://wa.me/${config.phones[0].number.replace('+', '')}`);
         setLink('btn-email', `mailto:${config.email}`);
         setLink('btn-website', config.website);
-        
-        const addressQuery = encodeURIComponent(config.address.display);
-        setLink('btn-directions', `https://www.google.com/maps/search/?api=1&query=${addressQuery}`);
-        setLink('btn-brochure', config.brochureUrl);
+        setLink('btn-brochure', '/company-profile');
         setLink('btn-instagram', config.socials.instagram);
         setLink('btn-facebook', config.socials.facebook);
 
@@ -25,13 +20,87 @@ document.addEventListener('DOMContentLoaded', () => {
         setLink('social-facebook', config.socials.facebook);
         setLink('social-website', config.website);
         setLink('social-email', `mailto:${config.email}`);
-        setLink('social-phone', `tel:${config.phones[0].number}`);
-        setLink('social-whatsapp', `https://wa.me/${config.phones[0].number.replace('+', '')}`);
 
-        // Sticky Bar
-        setLink('sticky-call', `tel:${config.phones[0].number}`);
-        setLink('sticky-whatsapp', `https://wa.me/${config.phones[0].number.replace('+', '')}`);
-        setLink('sticky-directions', `https://www.google.com/maps/search/?api=1&query=${addressQuery}`);
+        // Popups Triggering Setup
+        const callPopup = document.getElementById('call-popup');
+        const whatsappPopup = document.getElementById('whatsapp-popup');
+
+        const showPopup = (popup) => {
+            if (popup) {
+                popup.classList.add('active');
+                popup.setAttribute('aria-hidden', 'false');
+            }
+        };
+
+        const hidePopup = (popup) => {
+            if (popup) {
+                popup.classList.remove('active');
+                popup.setAttribute('aria-hidden', 'true');
+            }
+        };
+
+        const setupPopupTriggers = (triggerIds, popup) => {
+            triggerIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        showPopup(popup);
+                    });
+                }
+            });
+        };
+
+        setupPopupTriggers(['btn-call', 'sticky-call', 'social-phone'], callPopup);
+        setupPopupTriggers(['btn-whatsapp', 'sticky-whatsapp', 'social-whatsapp'], whatsappPopup);
+
+        // Close triggers
+        document.querySelectorAll('.modal-close, .modal-overlay').forEach(closeEl => {
+            closeEl.addEventListener('click', (e) => {
+                if (e.target.classList.contains('modal-overlay') || e.target.classList.contains('modal-close')) {
+                    hidePopup(callPopup);
+                    hidePopup(whatsappPopup);
+                }
+            });
+        });
+
+        // Copy buttons logic
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const text = btn.getAttribute('data-copy');
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '📋 Copied!';
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            });
+        });
+
+        // Directions platform redirection logic
+        const handleDirections = (e) => {
+            e.preventDefault();
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            const isAndroid = /Android/.test(navigator.userAgent);
+            const gmapsUrl = "https://maps.app.goo.gl/pSyHA8PP8LjzmRVs6";
+            
+            if (isIOS) {
+                window.open("maps://?daddr=18.988226,75.772590&q=Rampushpa+Agro+Processing", "_self");
+                setTimeout(() => {
+                    window.open(gmapsUrl, "_blank");
+                }, 2000);
+            } else {
+                window.open(gmapsUrl, "_blank");
+            }
+        };
+
+        const dirBtn = document.getElementById('btn-directions');
+        const stickyDirBtn = document.getElementById('sticky-directions');
+        if (dirBtn) dirBtn.addEventListener('click', handleDirections);
+        if (stickyDirBtn) stickyDirBtn.addEventListener('click', handleDirections);
     }
 
     // 2. VCF Generation Logic

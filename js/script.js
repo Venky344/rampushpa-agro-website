@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 6. Inject WhatsApp Floating Button
     const waButton = document.createElement('a');
-    waButton.href = "https://api.whatsapp.com/send?phone=919422650505"; // Official Rampushpa Number (Updated)
+    waButton.href = "https://api.whatsapp.com/send?phone=917588950505"; // Official Rampushpa Number (Updated)
     waButton.className = "whatsapp-float";
     waButton.target = "_blank";
     waButton.setAttribute("aria-label", "Chat on WhatsApp");
@@ -122,5 +122,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 9. Contact Form Logic (Removed - using mailto directly in HTML)
+    // 9. Resources Mobile Dropdown Toggle
+    const dropdown = document.querySelector('.dropdown');
+    if (dropdown) {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        if (toggle) {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+    }
 });

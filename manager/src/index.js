@@ -159,7 +159,7 @@ ipcMain.handle('save-products', async (event, data) => {
                 const rateStyle = brand.showRate ? 'font-size: 1.5rem; font-weight: bold; color: var(--color-accent);' : 'font-size: 1.2rem; font-weight: bold; color: var(--color-primary);';
                 
                 const inquiryMsg = encodeURIComponent(`Hello Rampushpa Agro,\n\nI am interested in:\nProduct: ${cat.name}\nBrand: ${brand.name}\n\nPlease share details and current pricing.`);
-                const whatsappLink = `https://wa.me/919422931794?text=${inquiryMsg}`;
+                const whatsappLink = `https://wa.me/917721931794?text=${inquiryMsg}`;
 
                 const imgHtml = brand.image 
                     ? `<img src="${brand.image}" alt="${brand.name}" style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">`

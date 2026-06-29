@@ -46,7 +46,7 @@
             </a>
             <a href="#" id="btn-whatsapp" class="action-btn">
                 <span class="btn-icon" aria-hidden="true">💬</span>
-                <span class="btn-text">WhatsApp</span>
+                <span class="btn-text">Chat on WhatsApp</span>
             </a>
             <a href="#" id="btn-email" class="action-btn">
                 <span class="btn-icon" aria-hidden="true">📧</span>
@@ -209,6 +209,69 @@
             <span class="label">Directions</span>
         </a>
     </aside>
+
+    <!-- Call Contact Popup / Bottom Sheet -->
+    <div id="call-popup" class="modal-overlay" aria-hidden="true">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Contact Sales</h3>
+                <button class="modal-close" aria-label="Close popup">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-option">
+                    <div class="contact-info">
+                        <span class="contact-label">Call Sales 1</span>
+                        <a href="tel:+917721931794" class="contact-number">+91 7721931794</a>
+                    </div>
+                    <div class="contact-actions">
+                        <a href="tel:+917721931794" class="contact-action-btn dial-btn" aria-label="Call Sales 1">📞 Call</a>
+                        <button class="contact-action-btn copy-btn" data-copy="+917721931794" aria-label="Copy Sales 1 number">📋 Copy</button>
+                    </div>
+                </div>
+                <div class="contact-option">
+                    <div class="contact-info">
+                        <span class="contact-label">Call Sales 2</span>
+                        <a href="tel:+917588950505" class="contact-number">+91 7588950505</a>
+                    </div>
+                    <div class="contact-actions">
+                        <a href="tel:+917588950505" class="contact-action-btn dial-btn" aria-label="Call Sales 2">📞 Call</a>
+                        <button class="contact-action-btn copy-btn" data-copy="+917588950505" aria-label="Copy Sales 2 number">📋 Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Contact Popup / Bottom Sheet -->
+    <div id="whatsapp-popup" class="modal-overlay" aria-hidden="true">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Chat on WhatsApp</h3>
+                <button class="modal-close" aria-label="Close popup">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-info-text">Select a representative to chat on WhatsApp:</p>
+                <div class="contact-option wa-option">
+                    <div class="contact-info">
+                        <span class="contact-label">WhatsApp Sales 1</span>
+                        <span class="contact-number">+91 7721931794</span>
+                    </div>
+                    <div class="contact-actions">
+                        <a href="https://wa.me/917721931794?text=Hello%20Rampushpa%20Agro%20Processing%2C%0A%0AI%20would%20like%20to%20know%20more%20about%20your%20products%20and%20services." target="_blank" rel="noopener noreferrer" class="contact-action-btn wa-btn" aria-label="Chat with Sales 1 on WhatsApp">💬 Chat</a>
+                    </div>
+                </div>
+                <div class="contact-option wa-option">
+                    <div class="contact-info">
+                        <span class="contact-label">WhatsApp Sales 2</span>
+                        <span class="contact-number">+91 7588950505</span>
+                    </div>
+                    <div class="contact-actions">
+                        <a href="https://wa.me/917588950505?text=Hello%20Rampushpa%20Agro%20Processing%2C%0A%0AI%20would%20like%20to%20know%20more%20about%20your%20products%20and%20services." target="_blank" rel="noopener noreferrer" class="contact-action-btn wa-btn" aria-label="Chat with Sales 2 on WhatsApp">💬 Chat</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
