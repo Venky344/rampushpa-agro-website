@@ -13,10 +13,14 @@
 @layer utilities {
   .glass {
     background-color: rgb(255 255 255 / 0.7);
-    @apply backdrop-blur-md border border-white/20 shadow-lg;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    @apply border border-white/20 shadow-lg;
   }
   .glass-dark {
-    @apply bg-black/50 backdrop-blur-md border border-white/10 shadow-lg;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    @apply bg-black/50 border border-white/10 shadow-lg;
   }
 }
 
