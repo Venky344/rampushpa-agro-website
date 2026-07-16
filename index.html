@@ -21,131 +21,162 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Rampushpa Agro Processing",
-      "image": "https://rampushpaagro.in/assets/logos/rap_logo.webp",
-      "@id": "https://rampushpaagro.in",
-      "url": "https://rampushpaagro.in",
-      "telephone": "+917721931794",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Beed",
-        "addressLocality": "Beed",
-        "addressRegion": "MH",
-        "postalCode": "431122",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 18.9894,
-        "longitude": 75.7601
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://rampushpaagro.in/#organization",
+          "name": "Rampushpa Agro Processing",
+          "url": "https://rampushpaagro.in",
+          "logo": "https://rampushpaagro.in/assets/logos/rap_logo.webp",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-7721931794",
+            "contactType": "customer service",
+            "areaServed": "IN",
+            "availableLanguage": ["English", "Marathi", "Hindi"]
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://rampushpaagro.in/#localbusiness",
+          "name": "Rampushpa Agro Processing",
+          "image": "https://rampushpaagro.in/assets/logos/rap_logo.webp",
+          "telephone": "+917721931794",
+          "url": "https://rampushpaagro.in",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Vipra Nagar",
+            "addressLocality": "Beed",
+            "addressRegion": "MH",
+            "postalCode": "431122",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 18.9894,
+            "longitude": 75.7601
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://rampushpaagro.in/#website",
+          "url": "https://rampushpaagro.in",
+          "name": "Rampushpa Agro Processing Maharashtra | Premium Grain Cleaning Plant Beed"
+        }
+      ]
     }
     </script>
 
     <!-- Analytics -->
-    <script src="/js/analytics.js"></script>
+    <script src="/js/analytics.js?v=3.0.2"></script>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <!-- GSAP for CardNav Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./css/styles.css?v=3.1.0">
 </head>
 
 <body class="transition-colors duration-300">
-    <!-- Header -->
-        <header class="main-header">
-        <div class="container header-content">
-            <a href="/" class="logo">
-                <img src="/assets/logos/rap_logo.webp" alt="Rampushpa Agro Processing Logo" loading="lazy">
-                <span>Rampushpa Agro</span>
+    <!-- React Bits Card Nav (Vanilla Port) -->
+    <div class="card-nav-container">
+      <nav class="card-nav" id="react-bits-card-nav" style="background-color: #fff">
+        <div class="card-nav-top">
+          <div class="hamburger-menu" id="card-nav-hamburger" role="button" aria-label="Open menu" aria-expanded="false" tabindex="0" style="color: #000">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+          </div>
+          
+          <div class="logo-container">
+            <a href="/" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="/assets/logos/rap_logo.webp" alt="Rampushpa Agro Processing Logo" class="logo" style="height: 28px; width: auto;">
+              <span style="margin-left: 10px; font-size: 1.2rem; color: var(--color-primary); font-weight: 700;">Rampushpa Agro</span>
             </a>
-            <nav class="nav-container">
-                <ul class="nav-links">
-                    <li><a href="/" class="nav-item active">Home</a></li>
-                    <li><a href="/about.html" class="nav-item">About</a></li>
-                    <li><a href="/products.html" class="nav-item">Products</a></li>
-                    <li><a href="/services.html" class="nav-item">Infrastructure</a></li>
-                    <li><a href="/gallery.html" class="nav-item">Gallery</a></li>
-                    <li><a href="/contact.html" class="nav-item">Contact</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-item dropdown-toggle">Resources <span class="chevron">▼</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/company-profile">Company Profile (View Online)</a></li>
-                            <li><a href="/company-profile?download=true">Download Brochure (PDF)</a></li>
-                            <li><a href="/card.html">Digital Business Card</a></li>
-                            <li><a href="https://maps.app.goo.gl/pSyHA8PP8LjzmRVs6" target="_blank" rel="noopener noreferrer">Get Directions</a></li>
-                            <li><a href="https://www.instagram.com/rampushpa_agro?igsh=MXRmenFrb2p3amp6cg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                        </ul>
-                    </li>
-                    <li class="mobile-only"><a href="/contact.html" class="btn btn-quote-mobile">Get Quote</a></li>
-                </ul>
-                <div class="header-actions flex items-center gap-4">
-                    <a href="/contact.html" class="btn btn-quote">Get Quote</a>
-                </div>
-                <div class="mobile-menu-btn" aria-label="Toggle Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+          </div>
+          
+          <a href="/contact.html" class="card-nav-cta-button" style="background-color: #111; color: #fff; text-decoration: none;">
+            Get Quote
+          </a>
         </div>
-    </header>
+        
+        <div class="card-nav-content" id="card-nav-content" aria-hidden="true">
+          <!-- Card 1 -->
+          <div class="nav-card nav-card-item" style="background-color: #1B1722; color: #fff">
+            <div class="nav-card-label">About</div>
+            <div class="nav-card-links">
+              <a class="nav-card-link" href="/about.html" aria-label="About Company">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Company Profile
+              </a>
+              <a class="nav-card-link" href="/services.html" aria-label="Infrastructure">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Infrastructure
+              </a>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="nav-card nav-card-item" style="background-color: #2F293A; color: #fff">
+            <div class="nav-card-label">Products</div>
+            <div class="nav-card-links">
+              <a class="nav-card-link" href="/products.html" aria-label="Grains">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Our Grains
+              </a>
+              <a class="nav-card-link" href="/gallery.html" aria-label="Gallery">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Gallery
+              </a>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="nav-card nav-card-item" style="background-color: #2F293A; color: #fff">
+            <div class="nav-card-label">Resources</div>
+            <div class="nav-card-links">
+              <a class="nav-card-link" href="/company-profile" aria-label="Company Profile">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                View Brochure
+              </a>
+              <a class="nav-card-link" href="/contact.html" aria-label="Contact Us">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-section">
+        <div class="hero-bg-video-container">
+            <video autoplay muted loop playsinline preload="metadata" poster="/assets/videos/hero/poster.webp" class="hero-bg-video">
+                <source src="/assets/videos/hero/hero-background.webm" type="video/webm">
+                <source src="/assets/videos/hero/hero-background.mp4" type="video/mp4">
+            </video>
+            <div class="hero-bg-overlay"></div>
+        </div>
         <div class="container hero-container">
             <div class="hero-text fade-in-up">
                 <span class="hero-eyebrow">Established 2017 • Beed, Maharashtra</span>
                 <h1 id="cms-home-heroTitle">Premium Grain Cleaning & Agro Processing</h1>
                 <p id="cms-home-heroDescription">Welcome to Rampushpa. We are a trusted Grain Cleaning and Processing facility dedicated to quality, reliability, and farmer satisfaction.</p>
                 <div class="hero-btns">
-                    <a href="/services.html" class="btn btn-primary">Our Services</a>
-                    <a href="/contact.html" class="btn btn-outline">Get a Quote</a>
-                </div>
-            </div>
-            <div class="hero-visual fade-in-up">
-                <div class="slider-container">
-                    <div class="slider-track snap-x snap-mandatory overflow-x-auto sm:overflow-x-visible no-scrollbar">
-                        <div class="slide snap-center">
-                            <picture>
-                                <source media="(max-width: 600px)" srcset="/assets/images/mogra.webp">
-                                <img src="/assets/images/mogra.webp" alt="Mogra Product Packaging" loading="lazy" class="w-full h-full object-cover">
-                            </picture>
-                        </div>
-                        <div class="slide snap-center">
-                            <picture>
-                                <source media="(max-width: 600px)" srcset="/assets/images/pranjal.webp">
-                                <img src="/assets/images/pranjal.webp" alt="Pranjal Wheat Cleaning" loading="lazy" class="w-full h-full object-cover">
-                            </picture>
-                        </div>
-                        <div class="slide snap-center">
-                            <picture>
-                                <source media="(max-width: 600px)" srcset="/assets/images/riddhi_siddhi.webp">
-                                <img src="/assets/images/riddhi_siddhi.webp" alt="Riddhi Siddhi Processing" loading="lazy" class="w-full h-full object-cover">
-                            </picture>
-                        </div>
-                        <div class="slide snap-center">
-                            <picture>
-                                <source media="(max-width: 600px)" srcset="/assets/images/yogi.webp">
-                                <img src="/assets/images/yogi.webp" alt="Yogi Products" loading="lazy" class="w-full h-full object-cover">
-                            </picture>
-                        </div>
-                    </div>
-                    <!-- Navigation Buttons -->
-                    <button class="slider-btn prev-btn hidden sm:flex" aria-label="Previous Slide">❮</button>
-                    <button class="slider-btn next-btn hidden sm:flex" aria-label="Next Slide">❯</button>
+                    <a href="/company-profile" class="btn btn-primary">Company Profile</a>
                 </div>
             </div>
         </div>
@@ -183,47 +214,68 @@
                 <p>Since 2017, Rampushpa has been a trusted partner for farmers and traders across Maharashtra.</p>
             </div>
             <div class="features-grid">
-                <div class="feature-card fade-in-up group hover:scale-[1.02] transition-transform duration-300">
-                    <div class="icon-box text-blue-500 group-hover:scale-110 transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M13 18h1"/><path d="M9 18h1"/></svg>
+                <div class="feature-card fade-in-up group hover:scale-[1.02] transition-transform duration-300" style="text-align: center; border-bottom: 3px solid var(--color-primary);">
+                    <div class="icon-box text-blue-500 group-hover:scale-110 transition-transform duration-300" style="margin: 0 auto 1rem auto; width: 60px; height: 60px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <h3>Quality Focused</h3>
+                    <p>Rigorous multi-stage optical sorting ensures 99.9% purity across all our grain variants.</p>
+                </div>
+                <div class="feature-card fade-in-up group hover:scale-[1.02] transition-transform duration-300" style="text-align: center; border-bottom: 3px solid var(--color-accent);">
+                    <div class="icon-box text-orange-500 group-hover:scale-110 transition-transform duration-300" style="margin: 0 auto 1rem auto; width: 60px; height: 60px; background: #fff7ed; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
                     </div>
                     <h3>Modern Infrastructure</h3>
-                    <p>State-of-the-art machinery for high-capacity grain cleaning and processing.</p>
+                    <p>High-capacity, state-of-the-art machinery enabling rapid and uniform agricultural processing.</p>
                 </div>
-                <div class="feature-card fade-in-up group hover:scale-[1.02] transition-transform duration-300">
-                    <div class="icon-box text-yellow-500 group-hover:scale-110 transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                <div class="feature-card fade-in-up group hover:scale-[1.02] transition-transform duration-300" style="text-align: center; border-bottom: 3px solid var(--color-secondary);">
+                    <div class="icon-box text-indigo-500 group-hover:scale-110 transition-transform duration-300" style="margin: 0 auto 1rem auto; width: 60px; height: 60px; background: #eef2ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                     </div>
-                    <h3>Quality Assurance</h3>
-                    <p>Rigorous quality checks at every stage ensuring only the best reaches you.</p>
+                    <h3>Trusted Brands</h3>
+                    <p>Supplying wholesale and FMCG markets with reputed brands like Mogra, Kasturi, and Pranjal.</p>
                 </div>
-                <div class="feature-card fade-in-up group hover:scale-[1.02] transition-transform duration-300">
-                    <div class="icon-box text-green-500 group-hover:scale-110 transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+                <div class="feature-card fade-in-up group hover:scale-[1.02] transition-transform duration-300" style="text-align: center; border-bottom: 3px solid var(--color-highlight);">
+                    <div class="icon-box text-green-500 group-hover:scale-110 transition-transform duration-300" style="margin: 0 auto 1rem auto; width: 60px; height: 60px; background: #f0fdf4; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M4 10h16"/><path d="M10 14l2 2 4-4"/></svg>
                     </div>
-                    <h3>Reliable Supply</h3>
-                    <p>Efficient supply chain management ensuring timely delivery of products.</p>
+                    <h3>Timely Dispatch</h3>
+                    <p>Strategic location in Beed ensures prompt logistics and secure nationwide delivery channels.</p>
                 </div>
-                <div class="feature-card fade-in-up group hover:scale-[1.02] transition-transform duration-300">
-                    <div class="icon-box text-orange-500 group-hover:scale-110 transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 14 4-4"/><path d="m22 14-4-4"/><path d="M8 22v-3a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/><circle cx="12" cy="7" r="4"/><path d="M16 10.5c.34-.14.7-.26 1.06-.35"/><path d="M6.94 10.15c.36.09.72.21 1.06.35"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Certifications -->
+    <section class="trust-cert-banner section-padding">
+        <div class="container fade-in-up">
+            <div class="cert-grid">
+                <div class="cert-badge">
+                    <div class="cert-badge-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                     </div>
-                    <h3>Trusted by Farmers</h3>
-                    <p>Deep-rooted relationships with local farmers and traders ensuring mutual growth.</p>
+                    <div class="cert-badge-info">
+                        <h4>GST Registered</h4>
+                        <span>Govt. of India</span>
+                    </div>
                 </div>
-                <div class="feature-card fade-in-up group hover:scale-[1.02] transition-transform duration-300">
-                    <div class="icon-box text-indigo-500 group-hover:scale-110 transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <div class="cert-badge">
+                    <div class="cert-badge-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                     </div>
-                    <h3>Experienced Team</h3>
-                    <p>A dedicated team of experts overseeing operations since 2017.</p>
+                    <div class="cert-badge-info">
+                        <h4>FSSAI Licensed</h4>
+                        <span>Food Safety Standards</span>
+                    </div>
                 </div>
-                <div class="feature-card fade-in-up group hover:scale-[1.02] transition-transform duration-300">
-                    <div class="icon-box text-red-500 group-hover:scale-110 transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <div class="cert-badge">
+                    <div class="cert-badge-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                     </div>
-                    <h3>Customer Focus</h3>
-                    <p>Building lasting relationships based on transparency and integrity.</p>
+                    <div class="cert-badge-info">
+                        <h4>Premium Quality</h4>
+                        <span>Export Grade Grains</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -271,6 +323,83 @@
             </div>
             <div class="split-image fade-in-up">
                 <img src="/assets/logos/rap_logo.webp" alt="Rampushpa Agro Processing Logo" loading="lazy" style="width:100%; max-width:400px; border-radius:8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center fade-in-up">
+                <span class="section-tag">Client Feedback</span>
+                <h2>Trusted by Trade Partners</h2>
+                <p>Hear from the wholesalers, distributors, and mills who rely on Rampushpa Agro Processing.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card fade-in-up">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Rampushpa's wheat sorting is unparalleled. We've been sourcing Uttam brand for our flour mill, and the zero-dust guarantee has improved our yield significantly."</p>
+                    <div class="testimonial-author">
+                        <h4>Rajesh Deshmukh</h4>
+                        <span>Flour Mill Owner, Pune</span>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in-up" style="transition-delay: 100ms;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Their timely dispatch and transparent dealings make them our primary supplier for Jowar and Bajra. The Village Gold pearl millet always meets our premium retail standards."</p>
+                    <div class="testimonial-author">
+                        <h4>Amit Agarwal</h4>
+                        <span>Wholesale Distributor, Mumbai</span>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in-up" style="transition-delay: 200ms;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The Kasturi Chana from Rampushpa has excellent size uniformity. Their optical color sorting eliminates all defects, saving us time in secondary processing."</p>
+                    <div class="testimonial-author">
+                        <h4>Suresh Patel</h4>
+                        <span>Dal Mill Operator, Nashik</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header text-center fade-in-up">
+                <span class="section-tag">Common Queries</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-container fade-in-up">
+                <div class="faq-item">
+                    <button class="faq-question">Which grains do you process?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">We specialize in processing and color sorting Wheat, Jowar (Sorghum), Bajra (Pearl Millet), and Chana (Chickpeas).</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you provide bulk processing?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, we operate two high-capacity processing units in Beed specifically designed to handle large-scale bulk processing and wholesale supply.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Where is your factory located?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Our processing infrastructure is situated at Vipra Nagar, Beed, Maharashtra (PIN: 431122), providing strategic access to major agricultural trade routes.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Which brands do you manufacture?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Our flagship brands include Uttam and Sarvottam (Wheat), Village Gold and Master Chef (Bajra), Mogra and Pranjal (Jowar), and Kasturi (Chana).</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can traders and wholesalers work with you?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Absolutely. We have deep-rooted partnerships with wholesale distributors, traders, and FMCG brands across Maharashtra. Contact our corporate desk for dealership inquiries.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I visit the factory?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, we welcome visits from prospective clients and partners. Please coordinate with our sales team via WhatsApp or phone to schedule a facility tour.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How do I contact Rampushpa?<span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">You can reach us at +91 7721931794, email us at rampushpaagro@gmail.com, or use the inquiry form on our Contact page for quick responses.</div></div>
+                </div>
             </div>
         </div>
     </section>
@@ -355,6 +484,6 @@
 
 
 
-    <script src="/js/script.js" defer></script>
+    <script src="/js/script.js?v=3.0.2" defer></script>
 </body>
 </html>

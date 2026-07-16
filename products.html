@@ -10,9 +10,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="https://rampushpaagro.in/products.html">
     <link rel="icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.webp">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.webp">
     <link rel="manifest" href="/site.webmanifest">
     
     <script type="application/ld+json">
@@ -21,55 +21,89 @@
       "@type": "Organization",
       "name": "Rampushpa Agro Processing",
       "url": "https://rampushpaagro.in",
-      "logo": "https://rampushpaagro.in/favicon-512x512.png"
+      "logo": "https://rampushpaagro.in/favicon-512x512.webp"
     }
     </script>
     
     <!-- Analytics -->
-    <script src="/js/analytics.js"></script>
+    <script src="/js/analytics.js?v=3.0.2"></script>
 
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css?v=3.0.2">
+    <!-- GSAP for CardNav Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 
 <body>
     <!-- Header -->
-        <header class="main-header">
-        <div class="container header-content">
-            <a href="/" class="logo">
-                <img src="/assets/logos/rap_logo.webp" alt="Rampushpa Agro Processing Logo" loading="lazy">
-                <span>Rampushpa Agro</span>
+        <!-- React Bits Card Nav (Vanilla Port) -->
+    <div class="card-nav-container">
+      <nav class="card-nav" id="react-bits-card-nav" style="background-color: #fff">
+        <div class="card-nav-top">
+          <div class="hamburger-menu" id="card-nav-hamburger" role="button" aria-label="Open menu" aria-expanded="false" tabindex="0" style="color: #000">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+          </div>
+          
+          <div class="logo-container">
+            <a href="/" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="/assets/logos/rap_logo.webp" alt="Rampushpa Agro Processing Logo" class="logo" style="height: 28px; width: auto;">
+              <span style="margin-left: 10px; font-size: 1.2rem; color: var(--color-primary); font-weight: 700;">Rampushpa Agro</span>
             </a>
-            <nav class="nav-container">
-                <ul class="nav-links">
-                    <li><a href="/" class="nav-item">Home</a></li>
-                    <li><a href="/about.html" class="nav-item">About</a></li>
-                    <li><a href="/products.html" class="nav-item active">Products</a></li>
-                    <li><a href="/services.html" class="nav-item">Infrastructure</a></li>
-                    <li><a href="/gallery.html" class="nav-item">Gallery</a></li>
-                    <li><a href="/contact.html" class="nav-item">Contact</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-item dropdown-toggle">Resources <span class="chevron">▼</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/company-profile">Company Profile (View Online)</a></li>
-                            <li><a href="/company-profile?download=true">Download Brochure (PDF)</a></li>
-                            <li><a href="/card.html">Digital Business Card</a></li>
-                            <li><a href="https://maps.app.goo.gl/pSyHA8PP8LjzmRVs6" target="_blank" rel="noopener noreferrer">Get Directions</a></li>
-                            <li><a href="https://www.instagram.com/rampushpa_agro?igsh=MXRmenFrb2p3amp6cg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                        </ul>
-                    </li>
-                    <li class="mobile-only"><a href="/contact.html" class="btn btn-quote-mobile">Get Quote</a></li>
-                </ul>
-                <div class="header-actions">
-                    <a href="/contact.html" class="btn btn-quote">Get Quote</a>
-                </div>
-                <div class="mobile-menu-btn" aria-label="Toggle Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+          </div>
+          
+          <a href="/contact.html" class="card-nav-cta-button" style="background-color: #111; color: #fff; text-decoration: none;">
+            Get Quote
+          </a>
         </div>
-    </header>
+        
+        <div class="card-nav-content" id="card-nav-content" aria-hidden="true">
+          <!-- Card 1 -->
+          <div class="nav-card nav-card-item" style="background-color: #1B1722; color: #fff">
+            <div class="nav-card-label">About</div>
+            <div class="nav-card-links">
+              <a class="nav-card-link" href="/about.html" aria-label="About Company">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Company Profile
+              </a>
+              <a class="nav-card-link" href="/services.html" aria-label="Infrastructure">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Infrastructure
+              </a>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="nav-card nav-card-item" style="background-color: #2F293A; color: #fff">
+            <div class="nav-card-label">Products</div>
+            <div class="nav-card-links">
+              <a class="nav-card-link" href="/products.html" aria-label="Grains">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Our Grains
+              </a>
+              <a class="nav-card-link" href="/gallery.html" aria-label="Gallery">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Gallery
+              </a>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="nav-card nav-card-item" style="background-color: #2F293A; color: #fff">
+            <div class="nav-card-label">Resources</div>
+            <div class="nav-card-links">
+              <a class="nav-card-link" href="/company-profile" aria-label="Company Profile">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                View Brochure
+              </a>
+              <a class="nav-card-link" href="/contact.html" aria-label="Contact Us">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
 
     <!-- Page Header -->
     <section class="bg-light text-center" style="padding-top: 100px; padding-bottom: 2rem;">
@@ -101,7 +135,7 @@
         <div id="cat-cat-wheat" class="cat-pane" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
             <!-- Uttam -->
             <div class="brand-card fade-in-up search-item" data-name="swadeshi" data-category="wheat" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img src="/assets/images/brands/swadeshi.png" alt="Swadeshi Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
+                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img loading="lazy" src="/assets/images/brands/swadeshi.webp" alt="Swadeshi Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
                 <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
                     <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Swadeshi</h3>
                     <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Wheat processed to the highest purity standards.</p>
@@ -113,7 +147,7 @@
             </div>
             <!-- Sarvottam -->
             <div class="brand-card fade-in-up search-item" data-name="sarvottam" data-category="wheat" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img src="/assets/images/brands/sarvottam.png" alt="sarvottam Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
+                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img loading="lazy" src="/assets/images/brands/sarvottam.webp" alt="sarvottam Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
                 <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
                     <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Sarvottam</h3>
                     <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Wheat processed to the highest purity standards.</p>
@@ -129,7 +163,7 @@
         <div id="cat-cat-jowar" class="cat-pane" style="display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
             <!-- Pranjal -->
             <div class="brand-card fade-in-up search-item" data-name="pranjal" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img src="/assets/images/brands/pranjal.png" alt="pranjal Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
+                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img loading="lazy" src="/assets/images/brands/pranjal.webp" alt="pranjal Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
                 <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
                     <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Pranjal</h3>
                     <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Jowar processed to the highest purity standards.</p>
@@ -141,7 +175,7 @@
             </div>
             <!-- Mogra -->
             <div class="brand-card fade-in-up search-item" data-name="mogra" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img src="/assets/images/brands/mogra.png" alt="mogra Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
+                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img loading="lazy" src="/assets/images/brands/mogra.webp" alt="mogra Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
                 <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
                     <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Mogra</h3>
                     <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Jowar processed to the highest purity standards.</p>
@@ -153,7 +187,7 @@
             </div>
             <!-- Riddhi-Siddhi -->
             <div class="brand-card fade-in-up search-item" data-name="riddhi-siddhi" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img src="/assets/images/brands/riddhi-siddhi.png" alt="riddhi-siddhi Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
+                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img loading="lazy" src="/assets/images/brands/riddhi-siddhi.webp" alt="riddhi-siddhi Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
                 <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
                     <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Riddhi-Siddhi</h3>
                     <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Jowar processed to the highest purity standards.</p>
@@ -165,7 +199,7 @@
             </div>
             <!-- Yogi -->
             <div class="brand-card fade-in-up search-item" data-name="yogi" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img src="/assets/images/brands/yogi.png" alt="yogi Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
+                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img loading="lazy" src="/assets/images/brands/yogi.webp" alt="yogi Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
                 <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
                     <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Yogi</h3>
                     <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Jowar processed to the highest purity standards.</p>
@@ -177,7 +211,7 @@
             </div>
             <!-- Namo -->
             <div class="brand-card fade-in-up search-item" data-name="black-horse" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img src="/assets/images/brands/black-horse.png" alt="Black Horse Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
+                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img loading="lazy" src="/assets/images/brands/black-horse.webp" alt="Black Horse Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
                 <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
                     <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Black Horse</h3>
                     <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Jowar processed to the highest purity standards.</p>
@@ -189,7 +223,7 @@
             </div>
             <!-- Gajraj -->
             <div class="brand-card fade-in-up search-item" data-name="gajraj" data-category="jowar" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img src="/assets/images/brands/gajraj.png" alt="gajraj Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
+                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img loading="lazy" src="/assets/images/brands/gajraj.webp" alt="gajraj Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
                 <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
                     <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Gajraj</h3>
                     <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Jowar processed to the highest purity standards.</p>
@@ -205,7 +239,7 @@
         <div id="cat-cat-bajra" class="cat-pane" style="display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
             <!-- Village Gold -->
             <div class="brand-card fade-in-up search-item" data-name="village gold" data-category="bajra" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img src="/assets/images/brands/village-gold.png" alt="village gold Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
+                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img loading="lazy" src="/assets/images/brands/village-gold.webp" alt="village gold Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
                 <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
                     <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Village Gold</h3>
                     <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Bajra processed to the highest purity standards.</p>
@@ -217,7 +251,7 @@
             </div>
             <!-- Master Chef -->
             <div class="brand-card fade-in-up search-item" data-name="master chef" data-category="bajra" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img src="/assets/images/brands/master-chef.png" alt="master chef Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
+                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img loading="lazy" src="/assets/images/brands/master-chef.webp" alt="master chef Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
                 <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
                     <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Master Chef</h3>
                     <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Bajra processed to the highest purity standards.</p>
@@ -233,7 +267,7 @@
         <div id="cat-cat-chana" class="cat-pane" style="display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
             <!-- Kasturi -->
             <div class="brand-card fade-in-up search-item" data-name="kasturi" data-category="chana" style="background: white; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); display:flex; flex-direction:column;">
-                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img src="/assets/images/brands/kasturi.png" alt="kasturi Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
+                <div style="width: 100%; height: 250px; background: #f8fafc; display:flex; align-items:center; justify-content:center; padding: 1rem;"><img loading="lazy" src="/assets/images/brands/kasturi.webp" alt="kasturi Packaging" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"></div>
                 <div class="brand-info" style="padding: 1.5rem; flex-grow: 1; display:flex; flex-direction:column;">
                     <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Kasturi</h3>
                     <p class="text-muted" style="margin-bottom: 1rem; flex-grow: 1;">Premium quality Chana processed to the highest purity standards.</p>
@@ -343,7 +377,7 @@
             <p>© 2026 Rampushpa Agro Processing. All rights reserved.</p>
         </div>
     </footer>
-    <script src="/js/script.js" defer=""></script>
+    <script src="/js/script.js?v=3.0.2" defer=""></script>
 
 
     <!-- Floating WhatsApp Button (Glassmorphism) -->

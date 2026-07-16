@@ -93,6 +93,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -101,6 +102,7 @@ body {
     color: var(--color-text-main);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 h1,
@@ -483,11 +485,65 @@ img {
     align-items: center;
 }
 
+.hero-bg-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) calc(100% - 120px), rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) calc(100% - 120px), rgba(0,0,0,0) 100%);
+}
+
+.hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.70) 0%, rgba(253, 251, 247, 0.75) 100%),
+        rgba(1, 147, 64, 0.03); /* Subtle green tint */
+    z-index: 2;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 10;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-bg-video {
+        display: none;
+    }
+    .hero-bg-video-container {
+        background-image: url('/assets/videos/hero/poster.webp');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
 .hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-lg);
     align-items: center;
+}
+
+.hero-text {
+    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(255, 255, 255, 0.3);
 }
 
 .hero-eyebrow {
@@ -710,7 +766,7 @@ img {
 }
 
 /* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
     .hero-container,
     .split-layout,
@@ -730,15 +786,14 @@ img {
     .nav-links {
         position: fixed;
         top: 70px;
-        left: 0;
+        bottom: 0;
+        left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
         background: white;
         flex-direction: column;
         padding: 2rem var(--spacing-md);
         box-shadow: var(--shadow-lg);
-        transform: translateY(-150%);
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 900;
         text-align: center;
         overflow-y: auto;
@@ -746,7 +801,7 @@ img {
     }
 
     .nav-links.active {
-        transform: translateY(0);
+        left: 0;
     }
 
     .nav-links a.nav-item {
@@ -829,11 +884,11 @@ img {
 
     .hero-section {
         padding-top: 100px;
-        text-align: center;
+        text-align: left;
     }
 
     .hero-btns {
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 
@@ -1288,4 +1343,606 @@ select.form-control {
     min-height: 48px;
     font-size: 1.1rem;
     margin-top: 1rem;
+}
+
+/* ==========================================================================
+   GEMINI ENHANCEMENT PHASE 1 - CSS
+   ========================================================================== */
+
+/* 1. Testimonials */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+.testimonial-stars {
+    color: var(--color-gold-bright);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 4px;
+}
+.testimonial-text {
+    font-size: 1.05rem;
+    color: var(--color-text-main);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+.testimonial-author h4 {
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    margin: 0;
+}
+.testimonial-author span {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* 2. FAQ Accordion */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.faq-item {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+.faq-question {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text-main);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+.faq-question:hover {
+    background-color: var(--color-bg-light);
+}
+.faq-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background-color: white;
+}
+.faq-answer-inner {
+    padding: 0 1.5rem 1.25rem 1.5rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+.faq-item.active .faq-question {
+    color: var(--color-primary);
+}
+
+/* 3. Trust & Certifications */
+.trust-cert-banner {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+.cert-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+}
+.cert-badge {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: white;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #e2e8f0;
+    transition: transform var(--transition-fast);
+}
+.cert-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+.cert-badge-icon {
+    color: var(--color-primary);
+    background: #f0fdf4;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+.cert-badge-info h4 {
+    margin: 0;
+    color: var(--color-text-main);
+    font-size: 1.1rem;
+}
+.cert-badge-info span {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* 7. Enhanced Contact Info List */
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.contact-info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.contact-icon-wrapper {
+    background: #f0fdf4;
+    color: var(--color-primary);
+    padding: 0.75rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-text-wrapper h4 {
+    margin: 0 0 0.25rem 0;
+    color: var(--color-text-main);
+    font-size: 1.1rem;
+}
+.contact-text-wrapper p, .contact-text-wrapper a {
+    margin: 0;
+    margin-top: 0.4rem;
+    font-weight: 500;
+}
+
+.form-submit-btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* ==========================================================================
+   GEMINI ENHANCEMENT PHASE 1 - CSS
+   ========================================================================== */
+
+/* 1. Testimonials */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+.testimonial-stars {
+    color: var(--color-gold-bright);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 4px;
+}
+.testimonial-text {
+    font-size: 1.05rem;
+    color: var(--color-text-main);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+.testimonial-author h4 {
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    margin: 0;
+}
+.testimonial-author span {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* 2. FAQ Accordion */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.faq-item {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+.faq-question {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text-main);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+.faq-question:hover {
+    background-color: var(--color-bg-light);
+}
+.faq-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background-color: white;
+}
+.faq-answer-inner {
+    padding: 0 1.5rem 1.25rem 1.5rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+.faq-item.active .faq-question {
+    color: var(--color-primary);
+}
+
+/* 3. Trust & Certifications */
+.trust-cert-banner {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+.cert-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+}
+.cert-badge {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: white;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #e2e8f0;
+    transition: transform var(--transition-fast);
+}
+.cert-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+.cert-badge-icon {
+    color: var(--color-primary);
+    background: #f0fdf4;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+.cert-badge-info h4 {
+    margin: 0;
+    color: var(--color-text-main);
+    font-size: 1.1rem;
+}
+.cert-badge-info span {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* 7. Enhanced Contact Info List */
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.contact-info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.contact-icon-wrapper {
+    background: #f0fdf4;
+    color: var(--color-primary);
+    padding: 0.75rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-text-wrapper h4 {
+    margin: 0 0 0.25rem 0;
+    color: var(--color-text-main);
+    font-size: 1.1rem;
+}
+.contact-text-wrapper p, .contact-text-wrapper a {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-decoration: none;
+}
+.contact-text-wrapper a:hover {
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   REACT BITS CARD NAV COMPONENT CSS
+   ========================================================================== */
+
+.card-nav-container {
+  position: fixed;
+  top: 1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.card-nav {
+  display: block;
+  height: 60px;
+  padding: 0;
+  background-color: white;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  will-change: height;
+}
+
+.card-nav-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.45rem 0.55rem 1.1rem;
+  z-index: 2;
+}
+
+.hamburger-menu {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 6px;
+  width: 40px;
+}
+
+.hamburger-menu:hover .hamburger-line {
+  opacity: 0.75;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: currentColor;
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease,
+    margin 0.3s ease;
+  transform-origin: 50% 50%;
+}
+
+.hamburger-menu.open .hamburger-line:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.hamburger-menu.open .hamburger-line:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-nav-cta-button {
+  background-color: #111;
+  color: white;
+  border: none;
+  border-radius: calc(0.75rem - 0.35rem);
+  padding: 0 1.25rem;
+  height: 100%;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-nav-cta-button:hover {
+  background-color: #333;
+}
+
+.card-nav-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
+  bottom: 0;
+  padding: 0.5rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-nav.open .card-nav-content {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-card-item {
+  height: 100%;
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: calc(0.75rem - 0.2rem);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  gap: 8px;
+  user-select: none;
+}
+
+.nav-card-label {
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+}
+
+.nav-card-links {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-card-link {
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+}
+
+.nav-card-link:hover {
+  opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+  .card-nav-container {
+    width: 95%;
+    top: 1em;
+  }
+
+  .card-nav-top {
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+  }
+
+  .hamburger-menu {
+    order: 2;
+  }
+
+  .logo-container {
+    position: static;
+    transform: none;
+    order: 1;
+  }
+
+  .card-nav-cta-button {
+    display: none;
+  }
+
+  .card-nav-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 0.5rem;
+    bottom: 0;
+    justify-content: flex-start;
+  }
+
+  .nav-card-item {
+    height: auto;
+    min-height: 80px;
+    flex: 1 1 auto;
+    max-height: none;
+  }
+
+  .nav-card-label {
+    font-size: 18px;
+  }
+
+  .nav-card-link {
+    font-size: 15px;
+  }
 }

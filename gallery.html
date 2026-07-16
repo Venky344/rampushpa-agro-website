@@ -28,52 +28,86 @@
     </script>
     
     <!-- Analytics -->
-    <script src="/js/analytics.js"></script>
+    <script src="/js/analytics.js?v=3.0.2"></script>
 
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css?v=3.0.2">
     <!-- GLightbox CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css?v=3.0.2" />
+    <!-- GSAP for CardNav Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 
 <body>
     <!-- Header -->
-        <header class="main-header">
-        <div class="container header-content">
-            <a href="/" class="logo">
-                <img src="/assets/logos/rap_logo.webp" alt="Rampushpa Agro Processing Logo" loading="lazy">
-                <span>Rampushpa Agro</span>
+        <!-- React Bits Card Nav (Vanilla Port) -->
+    <div class="card-nav-container">
+      <nav class="card-nav" id="react-bits-card-nav" style="background-color: #fff">
+        <div class="card-nav-top">
+          <div class="hamburger-menu" id="card-nav-hamburger" role="button" aria-label="Open menu" aria-expanded="false" tabindex="0" style="color: #000">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+          </div>
+          
+          <div class="logo-container">
+            <a href="/" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="/assets/logos/rap_logo.webp" alt="Rampushpa Agro Processing Logo" class="logo" style="height: 28px; width: auto;">
+              <span style="margin-left: 10px; font-size: 1.2rem; color: var(--color-primary); font-weight: 700;">Rampushpa Agro</span>
             </a>
-            <nav class="nav-container">
-                <ul class="nav-links">
-                    <li><a href="/" class="nav-item">Home</a></li>
-                    <li><a href="/about.html" class="nav-item">About</a></li>
-                    <li><a href="/products.html" class="nav-item">Products</a></li>
-                    <li><a href="/services.html" class="nav-item">Infrastructure</a></li>
-                    <li><a href="/gallery.html" class="nav-item active">Gallery</a></li>
-                    <li><a href="/contact.html" class="nav-item">Contact</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-item dropdown-toggle">Resources <span class="chevron">▼</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/company-profile">Company Profile (View Online)</a></li>
-                            <li><a href="/company-profile?download=true">Download Brochure (PDF)</a></li>
-                            <li><a href="/card.html">Digital Business Card</a></li>
-                            <li><a href="https://maps.app.goo.gl/pSyHA8PP8LjzmRVs6" target="_blank" rel="noopener noreferrer">Get Directions</a></li>
-                            <li><a href="https://www.instagram.com/rampushpa_agro?igsh=MXRmenFrb2p3amp6cg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                        </ul>
-                    </li>
-                    <li class="mobile-only"><a href="/contact.html" class="btn btn-quote-mobile">Get Quote</a></li>
-                </ul>
-                <div class="header-actions">
-                    <a href="/contact.html" class="btn btn-quote">Get Quote</a>
-                </div>
-                <div class="mobile-menu-btn" aria-label="Toggle Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+          </div>
+          
+          <a href="/contact.html" class="card-nav-cta-button" style="background-color: #111; color: #fff; text-decoration: none;">
+            Get Quote
+          </a>
         </div>
-    </header>
+        
+        <div class="card-nav-content" id="card-nav-content" aria-hidden="true">
+          <!-- Card 1 -->
+          <div class="nav-card nav-card-item" style="background-color: #1B1722; color: #fff">
+            <div class="nav-card-label">About</div>
+            <div class="nav-card-links">
+              <a class="nav-card-link" href="/about.html" aria-label="About Company">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Company Profile
+              </a>
+              <a class="nav-card-link" href="/services.html" aria-label="Infrastructure">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Infrastructure
+              </a>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="nav-card nav-card-item" style="background-color: #2F293A; color: #fff">
+            <div class="nav-card-label">Products</div>
+            <div class="nav-card-links">
+              <a class="nav-card-link" href="/products.html" aria-label="Grains">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Our Grains
+              </a>
+              <a class="nav-card-link" href="/gallery.html" aria-label="Gallery">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Gallery
+              </a>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="nav-card nav-card-item" style="background-color: #2F293A; color: #fff">
+            <div class="nav-card-label">Resources</div>
+            <div class="nav-card-links">
+              <a class="nav-card-link" href="/company-profile" aria-label="Company Profile">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                View Brochure
+              </a>
+              <a class="nav-card-link" href="/contact.html" aria-label="Contact Us">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
 
     <!-- Page Header -->
     <section class="bg-light text-center" style="padding-top: 100px; padding-bottom: 2rem;">
@@ -91,29 +125,29 @@
                 <h3>Our Infrastructure</h3>
                 <p>A glimpse into our state-of-the-art facilities dedicated exclusively to grain cleaning and processing.</p>
                 <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
-                    <a href="/assets/images/factory/factory01.jpeg" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
-                        <img src="/assets/images/factory/factory01.jpeg" alt="Factory View 1" loading="lazy" class="w-full h-64 object-contain p-2">
+                    <a href="/assets/images/compressed/factory01.webp" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
+                        <img src="/assets/images/compressed/factory01.webp" alt="Factory View 1" loading="lazy" class="w-full h-64 object-contain p-2">
                     </a>
-                    <a href="/assets/images/factory/factory02.jpeg" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
-                        <img src="/assets/images/factory/factory02.jpeg" alt="Factory View 2" loading="lazy" class="w-full h-64 object-contain p-2">
+                    <a href="/assets/images/compressed/factory02.webp" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
+                        <img src="/assets/images/compressed/factory02.webp" alt="Factory View 2" loading="lazy" class="w-full h-64 object-contain p-2">
                     </a>
-                    <a href="/assets/images/factory/factory03.jpeg" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
-                        <img src="/assets/images/factory/factory03.jpeg" alt="Factory View 3" loading="lazy" class="w-full h-64 object-contain p-2">
+                    <a href="/assets/images/compressed/factory03.webp" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
+                        <img src="/assets/images/compressed/factory03.webp" alt="Factory View 3" loading="lazy" class="w-full h-64 object-contain p-2">
                     </a>
-                    <a href="/assets/images/factory/factory04.jpeg" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
-                        <img src="/assets/images/factory/factory04.jpeg" alt="Factory View 4" loading="lazy" class="w-full h-64 object-contain p-2">
+                    <a href="/assets/images/compressed/factory04.webp" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
+                        <img src="/assets/images/compressed/factory04.webp" alt="Factory View 4" loading="lazy" class="w-full h-64 object-contain p-2">
                     </a>
-                    <a href="/assets/images/factory/factory05.jpeg" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
-                        <img src="/assets/images/factory/factory05.jpeg" alt="Factory View 5" loading="lazy" class="w-full h-64 object-contain p-2">
+                    <a href="/assets/images/compressed/factory05.webp" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
+                        <img src="/assets/images/compressed/factory05.webp" alt="Factory View 5" loading="lazy" class="w-full h-64 object-contain p-2">
                     </a>
-                    <a href="/assets/images/factory/factory06.jpeg" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
-                        <img src="/assets/images/factory/factory06.jpeg" alt="Factory View 6" loading="lazy" class="w-full h-64 object-contain p-2">
+                    <a href="/assets/images/compressed/factory06.webp" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
+                        <img src="/assets/images/compressed/factory06.webp" alt="Factory View 6" loading="lazy" class="w-full h-64 object-contain p-2">
                     </a>
-                    <a href="/assets/images/factory/factory07.jpeg" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
-                        <img src="/assets/images/factory/factory07.jpeg" alt="Factory View 7" loading="lazy" class="w-full h-64 object-contain p-2">
+                    <a href="/assets/images/compressed/factory07.webp" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
+                        <img src="/assets/images/compressed/factory07.webp" alt="Factory View 7" loading="lazy" class="w-full h-64 object-contain p-2">
                     </a>
-                    <a href="/assets/images/factory/factory08.jpeg" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
-                        <img src="/assets/images/factory/factory08.jpeg" alt="Factory View 8" loading="lazy" class="w-full h-64 object-contain p-2">
+                    <a href="/assets/images/compressed/factory08.webp" class="glightbox gallery-item rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 bg-gray-100 flex items-center justify-center cursor-pointer">
+                        <img src="/assets/images/compressed/factory08.webp" alt="Factory View 8" loading="lazy" class="w-full h-64 object-contain p-2">
                     </a>
                 </div>
 
@@ -154,7 +188,7 @@
         </div>
     </footer>
     <!-- GLightbox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js?v=3.0.2"></script>
     <script>
         const lightbox = GLightbox({
             selector: '.glightbox',
@@ -163,7 +197,7 @@
             zoomable: true
         });
     </script>
-    <script src="/js/script.js" defer></script>
+    <script src="/js/script.js?v=3.0.2" defer></script>
     
     <!-- Floating WhatsApp Button (Glassmorphism) -->
     <a href="https://wa.me/917721931794" target="_blank" class="fixed bottom-6 right-6 z-50 p-4 rounded-full glass hover:scale-110 transition-transform duration-300 flex items-center justify-center text-[#019340]">
@@ -171,3 +205,5 @@
     </a>
 </body>
 </html>
+
+
