@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rampushpa Agro | Company Profile</title>
+    <meta name="description" content="Official Company Profile of Rampushpa Agro Processing. Explore our story, state-of-the-art infrastructure, grain processing journey, and high-quality brands.">
+    <meta property="og:title" content="Rampushpa Agro | Company Profile">
+    <meta property="og:description" content="Explore our story, state-of-the-art infrastructure, grain processing journey, and high-quality brands.">
+    <meta property="og:image" content="https://rampushpaagro.in/assets/logos/rap_logo.webp">
+    
+    <link rel="canonical" href="https://rampushpaagro.in/company-profile">
+    
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- Redirection Logic for Brochure Download -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('download') === 'true' || urlParams.get('print') === 'true') {
+            window.location.href = '/company-profile/brochure.html' + window.location.search;
+        }
+    </script>
+
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css?v=3.0.2" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/styles.css?v=3.0.2">
+    <link rel="stylesheet" href="/company-profile/cinematic.css?v=3.0.2">
+    <!-- GSAP for CardNav Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body class="story-page transition-colors duration-300">
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <!-- React Bits Card Nav (Vanilla Port) -->
+    <div class="card-nav-container">
+      <nav class="card-nav" id="react-bits-card-nav" style="background-color: #fff">
+        <div class="card-nav-top">
+          <div class="hamburger-menu" id="card-nav-hamburger" role="button" aria-label="Open menu" aria-expanded="false" tabindex="0" style="color: #000">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+          </div>
+          
+          <div class="logo-container">
+            <a href="/" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="/assets/logos/rap_logo.webp" alt="Rampushpa Agro Processing Logo" class="logo" style="height: 28px; width: auto;">
+              <span style="margin-left: 10px; font-size: 1.2rem; color: var(--color-primary); font-weight: 700;">Rampushpa Agro</span>
+            </a>
+          </div>
+          
+          <a href="/contact.html" class="card-nav-cta-button" style="background-color: #111; color: #fff; text-decoration: none;">
+            Get Quote
+          </a>
+        </div>
+        
+        <div class="card-nav-content" id="card-nav-content" aria-hidden="true">
+          <!-- Card 1 -->
+          <div class="nav-card nav-card-item" style="background-color: #1B1722; color: #fff">
+            <div class="nav-card-label">About</div>
+            <div class="nav-card-links">
+              <a class="nav-card-link" href="/about.html" aria-label="About Company">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Company Profile
+              </a>
+              <a class="nav-card-link" href="/services.html" aria-label="Infrastructure">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Infrastructure
+              </a>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="nav-card nav-card-item" style="background-color: #2F293A; color: #fff">
+            <div class="nav-card-label">Products</div>
+            <div class="nav-card-links">
+              <a class="nav-card-link" href="/products.html" aria-label="Grains">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Our Grains
+              </a>
+              <a class="nav-card-link" href="/gallery.html" aria-label="Gallery">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Gallery
+              </a>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="nav-card nav-card-item" style="background-color: #2F293A; color: #fff">
+            <div class="nav-card-label">Resources</div>
+            <div class="nav-card-links">
+              <a class="nav-card-link" href="/company-profile" aria-label="Company Profile">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                View Brochure
+              </a>
+              <a class="nav-card-link" href="/contact.html" aria-label="Contact Us">
+                <svg class="nav-card-link-icon" aria-hidden="true" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"></path></svg>
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- SECTION 1: HERO -->
+    <section class="story-hero">
+        <div class="story-hero-overlay"></div>
+        <div class="story-hero-bg"></div>
+        <div class="container relative z-20">
+            <div class="story-hero-content text-left">
+                <span class="text-gold text-xs uppercase tracking-widest font-bold block mb-4" style="color: var(--color-accent);">Premium Corporate Overview</span>
+                <h1 class="text-white text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                    Rampushpa Agro<br>Processing
+                </h1>
+                <p class="text-gray-300 text-lg md:text-xl font-light max-w-xl leading-relaxed mb-8">
+                    We Sell Quality, Not Quantity. An immersive insight into our standard grain processing, cleaning, and sorting operations.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#who-we-are" class="btn btn-primary">Explore Our Story &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: WHO WE ARE (Editorial Split with Stat Counters) -->
+    <section id="who-we-are" class="story-section bg-white story-reveal">
+        <div class="container">
+            <div class="editorial-grid">
+                <div class="editorial-text">
+                    <span class="text-xs uppercase tracking-widest font-bold text-[#019340] block mb-2">Introduction</span>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
+                        Pioneering Grain Purity Standards in Maharashtra
+                    </h2>
+                    <p class="text-slate-600 font-light leading-relaxed mb-6">
+                        Established in 2017 in Beed, Rampushpa Agro Processing operates state-of-the-art cleaning, sorting, and grading units. We specialize in processing high-quality local crops, bridging the gap between farming communities and wholesale buyers nationwide.
+                    </p>
+                    <p class="text-slate-600 font-light leading-relaxed">
+                        Through closed-loop pneumatic circuits, high-speed destoners, and optical sorting systems, we ensure zero sand, dust, or organic contaminants, achieving a certified 99.9% product purity standard.
+                    </p>
+                </div>
+                <div class="editorial-stats grid grid-cols-2 gap-8 pl-0 md:pl-10">
+                    <div class="border-l-4 border-[#019340] pl-6 py-2">
+                        <span class="block text-4xl md:text-5xl font-bold text-slate-800 tracking-tight mb-2 stat-number" data-target="2017" data-year="true">0</span>
+                        <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Established</span>
+                    </div>
+                    <div class="border-l-4 border-amber-500 pl-6 py-2">
+                        <span class="block text-4xl md:text-5xl font-bold text-slate-800 tracking-tight mb-2 stat-number" data-target="120">0</span>
+                        <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Daily Tons Capacity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: OUR STORY (Editorial Grid, Image Left / Text Right) -->
+    <section class="story-section bg-slate-50 story-reveal">
+        <div class="container">
+            <div class="editorial-grid">
+                <div class="editorial-image order-last md:order-first">
+                    <img src="/assets/images/compressed/factory01.webp" alt="Rampushpa Factory Building" class="w-full h-auto object-cover aspect-[4/3]" loading="lazy">
+                </div>
+                <div class="editorial-text">
+                    <span class="text-xs uppercase tracking-widest font-bold text-[#019340] block mb-2">Our Story</span>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
+                        Built on Trust, Driven by Excellence
+                    </h2>
+                    <p class="text-slate-600 font-light leading-relaxed mb-4">
+                        What began in 2017 as a regional sifting facility quickly expanded through forward-thinking technology integration. By setting up advanced machinery and robust logistics routes, Rampushpa became the primary supply partner for wholesale trade desks across Maharashtra.
+                    </p>
+                    <p class="text-slate-600 font-light leading-relaxed">
+                        Today, we process thousands of tons of grains annually, representing a key pillar in the region's agricultural value chain.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: OUR MISSION (Visual Full-Width Quote Banner) -->
+    <section class="full-width-image-banner" style="background-image: url('/assets/images/compressed/factory03.webp');">
+        <div class="absolute inset-0 bg-[#0f172a]/75 flex items-center justify-center p-6">
+            <div class="max-w-3xl text-center">
+                <span class="text-amber-500 text-xs uppercase tracking-widest font-bold block mb-4">Our Core Mission</span>
+                <p class="text-white text-2xl md:text-4xl font-light tracking-wide leading-relaxed italic">
+                    "To process every grain with honesty, hygiene, and mechanical precision, keeping our agricultural heritage trusted and modern."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: OUR INFRASTRUCTURE (Split Layout - Text Left, Image Right) -->
+    <section class="story-section bg-white story-reveal">
+        <div class="container">
+            <div class="editorial-grid">
+                <div class="editorial-text">
+                    <span class="text-xs uppercase tracking-widest font-bold text-[#019340] block mb-2">Infrastructure</span>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
+                        Equipped for Extreme Scale Operations
+                    </h2>
+                    <p class="text-slate-600 font-light leading-relaxed mb-6">
+                        Spanning massive spaces in Beed, our facilities house two individual processing lines configured to operate 24/7. 
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <span class="w-8 h-8 rounded-full bg-emerald-50 text-[#019340] flex items-center justify-center font-bold text-sm shrink-0">1</span>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-base">Multi-stage Pre-cleaners</h4>
+                                <p class="text-slate-500 text-sm font-light mt-1">Dual-aspiration systems pull light dust, straw, and organic residues prior to sizing.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="w-8 h-8 rounded-full bg-emerald-50 text-[#019340] flex items-center justify-center font-bold text-sm shrink-0">2</span>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-base">Buhler Color Sorting</h4>
+                                <p class="text-slate-500 text-sm font-light mt-1">Advanced cameras inspect each seed individually to eject impurities and discolored grains.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="editorial-image">
+                    <img src="/assets/images/compressed/factory04.webp" alt="Buhler Color Sorters in operation" class="w-full h-auto object-cover aspect-[4/3]" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: THE GRAIN JOURNEY (Vertical Timeline Layout) -->
+    <section class="story-section bg-slate-50 story-reveal">
+        <div class="container">
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-widest font-bold text-[#019340] block mb-2">Workflow Journey</span>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">The Journey of a Grain</h2>
+                <p class="text-slate-500 font-light mt-3 max-w-md mx-auto">From raw crop field collection to high-trust commercial distribution desks.</p>
+            </div>
+
+            <div class="timeline-journey">
+                <div class="timeline-journey-line"></div>
+
+                <!-- Step 1 -->
+                <div class="timeline-step">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-step-left">
+                        <span class="text-[#019340] text-sm font-semibold tracking-wider block mb-1">Step 01</span>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">Raw Sourcing</h4>
+                    </div>
+                    <div class="timeline-step-right">
+                        <p class="text-slate-500 font-light text-sm leading-relaxed">
+                            Acquired directly from high-yield farming belts in Maharashtra. Density checks determine grain grade suitability.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-step">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-step-left">
+                        <span class="text-[#019340] text-sm font-semibold tracking-wider block mb-1">Step 02</span>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">Aspiration Cleaning</h4>
+                    </div>
+                    <div class="timeline-step-right">
+                        <p class="text-slate-500 font-light text-sm leading-relaxed">
+                            Passed through vibro-cleaners and industrial destoners to drop heavy stones and lift light organic dust.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-step">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-step-left">
+                        <span class="text-[#019340] text-sm font-semibold tracking-wider block mb-1">Step 03</span>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">Precision Grading</h4>
+                    </div>
+                    <div class="timeline-step-right">
+                        <p class="text-slate-500 font-light text-sm leading-relaxed">
+                            Screen separators sort grains by size, separating shrivelled or broken elements to ensure even product sizing.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-step">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-step-left">
+                        <span class="text-[#019340] text-sm font-semibold tracking-wider block mb-1">Step 04</span>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">Optical Color Sorting</h4>
+                    </div>
+                    <div class="timeline-step-right">
+                        <p class="text-slate-500 font-light text-sm leading-relaxed">
+                            High-definition lenses separate damaged or color-blemished grains, achieving 99.9% pure, wholesome grains.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-step">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-step-left">
+                        <span class="text-[#019340] text-sm font-semibold tracking-wider block mb-1">Step 05</span>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">Pneumatic Packaging</h4>
+                    </div>
+                    <div class="timeline-step-right">
+                        <p class="text-slate-500 font-light text-sm leading-relaxed">
+                            Weighed scales fill custom moisture-proof bags which are double-stitched automatically to ensure durable transit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: PRODUCTS & BRANDS (White Minimal Cards) -->
+    <section class="story-section bg-white story-reveal">
+        <div class="container">
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-widest font-bold text-[#019340] block mb-2">Our Brands</span>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Flagship Grains Portfolio</h2>
+                <p class="text-slate-500 font-light mt-3 max-w-md mx-auto">Providing wholesale grain markets with reputed, packaged brands.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="story-product-card flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-slate-800">Wheat</h3>
+                            <span class="text-emerald-600 bg-emerald-50 text-xs font-semibold px-3 py-1 rounded">Sarvottam / Uttam</span>
+                        </div>
+                        <p class="text-slate-500 text-sm font-light leading-relaxed mb-6">
+                            Lokwan and Sharbati varieties polished and dust-cleaned. Delivers high gluten indices and excellent wheat flour yields.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl p-4 flex justify-center items-center h-44 border border-slate-100">
+                        <img loading="lazy" src="/assets/images/brands/sarvottam.webp" alt="Sarvottam Wheat Bag" class="max-h-36 w-auto object-contain">
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="story-product-card flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-slate-800">Jowar</h3>
+                            <span class="text-emerald-600 bg-emerald-50 text-xs font-semibold px-3 py-1 rounded">Mogra / Pranjal</span>
+                        </div>
+                        <p class="text-slate-500 text-sm font-light leading-relaxed mb-6">
+                            Milky white sorghum grains sorter-cleaned to achieve zero dust. Ideal for soft, traditional bhakri flours.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl p-4 flex justify-center items-center h-44 border border-slate-100">
+                        <img loading="lazy" src="/assets/images/brands/mogra.webp" alt="Mogra Jowar Bag" class="max-h-36 w-auto object-contain">
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="story-product-card flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-slate-800">Bajra</h3>
+                            <span class="text-emerald-600 bg-emerald-50 text-xs font-semibold px-3 py-1 rounded">Village Gold</span>
+                        </div>
+                        <p class="text-slate-500 text-sm font-light leading-relaxed mb-6">
+                            Export-grade pearl millet sorted to remove organic debris. High nutritional value with rich iron content.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl p-4 flex justify-center items-center h-44 border border-slate-100">
+                        <img loading="lazy" src="/assets/images/brands/village-gold.webp" alt="Village Gold Bajra Bag" class="max-h-36 w-auto object-contain">
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="story-product-card flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-slate-800">Chana</h3>
+                            <span class="text-emerald-600 bg-emerald-50 text-xs font-semibold px-3 py-1 rounded">Kasturi</span>
+                        </div>
+                        <p class="text-slate-500 text-sm font-light leading-relaxed mb-6">
+                            Bright Bengal gram chickpeas separated to guarantee consistent grain sizes. Essential for flour and splits (Dals).
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl p-4 flex justify-center items-center h-44 border border-slate-100">
+                        <img loading="lazy" src="/assets/images/brands/kasturi.webp" alt="Kasturi Chana Bag" class="max-h-36 w-auto object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: WHY CHOOSE RAMPUSHPA (Spaced Benefit Columns) -->
+    <section class="story-section bg-slate-50 story-reveal">
+        <div class="container">
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-widest font-bold text-[#019340] block mb-2">Our Assets</span>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Why Partner With Us?</h2>
+                <p class="text-slate-500 font-light mt-3 max-w-md mx-auto">Committed parameters that guarantee robust partnership value for wholesale dealers.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2">99.9% Certified Purity</h4>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed">
+                        Automated multi-stage cleaning and color sorting completely eliminates sand, dirt, and discolored grains from our brands.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2">Buhler Infrastructure</h4>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed">
+                        Equipped with premium Swiss-engineered Buhler optical sortex sorters ensuring high throughput sorting precision.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"/><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2">Secure Sealed Logistics</h4>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed">
+                        Strategic central facility in Beed coordinates rapid heavy-truck loading for prompt, secure dispatch routing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: FACTORY GALLERY (Editorial Magazine Layout) -->
+    <section class="story-section bg-white story-reveal">
+        <div class="container">
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-widest font-bold text-[#019340] block mb-2">Media Center</span>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Plant Gallery</h2>
+                <p class="text-slate-500 font-light mt-3 max-w-md mx-auto">Visual overview of our clean facility floors and heavy processing equipment.</p>
+            </div>
+
+            <div class="asymmetric-gallery">
+                <!-- Item 1 -->
+                <a href="/assets/images/compressed/factory01.webp" class="glightbox-gallery gallery-card col-span-8 cursor-zoom-in" data-gallery="factory-brochure">
+                    <img src="/assets/images/compressed/factory01.webp" alt="Factory Exterior View" loading="lazy">
+                </a>
+
+                <!-- Item 2 -->
+                <a href="/assets/images/compressed/factory02.webp" class="glightbox-gallery gallery-card col-span-4 cursor-zoom-in" data-gallery="factory-brochure">
+                    <img src="/assets/images/compressed/factory02.webp" alt="Pre-cleaner machinery" loading="lazy">
+                </a>
+
+                <!-- Item 3 -->
+                <a href="/assets/images/compressed/factory03.webp" class="glightbox-gallery gallery-card col-span-4 cursor-zoom-in" data-gallery="factory-brochure">
+                    <img src="/assets/images/compressed/factory03.webp" alt="Storage Bays" loading="lazy">
+                </a>
+
+                <!-- Item 4 -->
+                <a href="/assets/images/compressed/factory04.webp" class="glightbox-gallery gallery-card col-span-8 cursor-zoom-in" data-gallery="factory-brochure">
+                    <img src="/assets/images/compressed/factory04.webp" alt="Buhler sorting equipment" loading="lazy">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: QUALITY COMMITMENT (Editorial Split Block) -->
+    <section class="story-section bg-slate-900 text-white py-24 story-reveal">
+        <div class="container">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="text-amber-500 text-xs uppercase tracking-widest font-bold block mb-4" style="color: var(--color-accent);">Quality Commitment</span>
+                <h3 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
+                    Every grain deserves the highest standard. That is our promise.
+                </h3>
+                <p class="text-slate-400 font-light max-w-xl mx-auto leading-relaxed">
+                    We maintain rigorous grain monitoring at every phase, ensuring our trade buyers receive consistent grain packages that command retail market value.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: CONTACT CTA FOOTER GRID -->
+    <section class="story-section bg-slate-50 py-16">
+        <div class="container text-center">
+            <h2 class="text-3xl font-bold text-slate-800 mb-3">Partner with Rampushpa Agro</h2>
+            <p class="text-slate-500 font-light max-w-md mx-auto mb-10">Get directly in touch with our corporate desks or map routes to our Beed location.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
+                <a href="tel:+917721931794" class="bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-[#019340] hover:shadow-sm transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-emerald-600"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span class="text-slate-700 font-semibold text-sm">Call Direct</span>
+                </a>
+                
+                <a href="https://wa.me/917721931794" target="_blank" class="bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-[#019340] hover:shadow-sm transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-emerald-600"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span class="text-slate-700 font-semibold text-sm">WhatsApp</span>
+                </a>
+
+                <a href="https://maps.app.goo.gl/pSyHA8PP8LjzmRVs6" target="_blank" class="bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-[#019340] hover:shadow-sm transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-emerald-600"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span class="text-slate-700 font-semibold text-sm">Get Map</span>
+                </a>
+
+                <a href="/company-profile/brochure.html?download=true" class="bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-[#019340] hover:shadow-sm transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-emerald-600"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span class="text-slate-700 font-semibold text-sm">Brochure PDF</span>
+                </a>
+
+                <a href="/card.html" class="bg-white border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-[#019340] hover:shadow-sm transition-all duration-300 col-span-2 md:col-span-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-emerald-600"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                    <span class="text-slate-700 font-semibold text-sm">Biz Card</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Website Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="logo" style="margin-bottom: 1rem;">
+                    <img src="/assets/logos/rap_logo.webp" alt="Rampushpa Agro Processing" style="height: 50px; background: white; padding: 4px; border-radius: 4px;" loading="lazy">
+                </a>
+                <p>Quality. Trust. Excellence.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1CnvmJxfPW/?mibextid=wwXIfr" target="_blank" class="social-icon" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/rampushpa_agro?igsh=MXRmenFrb2p3amp6cg%3D%3D&utm_source=qr" target="_blank" class="social-icon" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.25-1.69 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.25-.15-4.77-1.69-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.15-3.25 1.69-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07m0-2.16c-3.26 0-3.67.01-4.95.07-4.35.2-6.78 2.62-6.98 6.98-.06 1.28-.07 1.69-.07 4.95s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.36-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.36-2.62-6.78-6.98-6.98-1.28-.06-1.69-.07-4.95-.07z" />
+                            <path d="M12 5.84c-3.4 0-6.16 2.76-6.16 6.16s2.76 6.16 6.16 6.16 6.16-2.76 6.16-6.16-2.76-6.16-6.16-6.16zm0 10.16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" />
+                            <circle cx="18.41" cy="5.59" r="1.3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/products.html">Products</a></li>
+                    <li><a href="/gallery.html">Gallery</a></li>
+                    <li><a href="/company-profile">Company Profile</a></li>
+                    <li><a href="/company-profile?download=true" style="color: var(--color-accent); font-weight: bold;">Download Profile</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:rampushpaagro@gmail.com">rampushpaagro@gmail.com</a></p>
+                <p>Phone: <a href="tel:+917721931794">+91 7721931794</a> , <a href="tel:+917588950505">+91 7588950505</a></p>
+                <p>Location: Beed, Maharashtra, 431122 </p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Rampushpa Agro Processing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- GLightbox JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js?v=3.0.2"></script>
+    
+    <!-- Main Global Scripts -->
+    <script src="/js/script.js?v=3.0.2" defer></script>
+    
+    <!-- Custom Scripts -->
+    <script src="/company-profile/cinematic.js?v=3.0.2" defer></script>
+</body>
+</html>

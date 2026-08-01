@@ -1,0 +1,1422 @@
+/* 
+   Rampushpa Agro Processing - Company Profile Brochure Stylesheet
+   Designed as a Luxury FMCG Corporate Brochure (Fortune Foods, Daawat, ITC style)
+   Theme: Emerald Green (#019340), Gold (#D4AF37), Cream (#FDFBF7), Charcoal (#111827)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-primary: #019340;
+    --color-primary-dark: #017a35;
+    --color-gold: #A8CF6A; /* Replaced with highlight green */
+    --color-gold-bright: #5BA7D1; /* Replaced with sky blue */
+    --color-charcoal: #1e293b; /* Replaced with slate-800 */
+    --color-cream: #f8fafc; /* Replaced with slate-50 */
+    --color-grey-viewer: #525659;
+    --color-grey-viewer-dark: #121214;
+    --color-white: #ffffff;
+    --color-card-bg: rgba(255, 255, 255, 0.9);
+    
+    /* Paper sizing */
+    --page-width: 210mm;
+    --page-height: 297mm;
+    
+    /* Global Fonts */
+    --font-serif: 'Outfit', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: var(--font-body);
+    background-color: var(--color-grey-viewer);
+    color: var(--color-charcoal);
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease;
+}
+
+/* Scrollbar Customization for Viewer */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: #3a3b3d;
+}
+body::-webkit-scrollbar-thumb {
+    background: #6b6d70;
+    border-radius: 5px;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: #8b8e91;
+}
+
+/* Sticky Top Action Bar */
+.top-action-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(8px);
+    color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.action-left .back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.action-left .back-btn:hover {
+    color: var(--color-gold-bright);
+}
+
+.action-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.action-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background-color: var(--color-white);
+    color: var(--color-charcoal);
+    border-color: var(--color-white);
+}
+
+.action-btn.btn-primary-action {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.action-btn.btn-primary-action:hover {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    color: var(--color-white);
+}
+
+/* Toast Notification */
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #1e293b;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1010;
+    transform: translateY(150%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: var(--font-heading);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-left: 4px solid var(--color-gold-bright);
+}
+
+.toast-notification.show {
+    transform: translateY(0);
+}
+
+/* PDF Viewer Page Container */
+.page-container {
+    padding: 100px 0 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--color-grey-viewer);
+    transition: background-color 0.3s ease;
+}
+
+/* Brochure Page Base Styles */
+.brochure-page {
+    width: var(--page-width);
+    height: var(--page-height);
+    background-color: var(--color-cream);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6cqw;
+    container-type: inline-size;
+    container-name: page;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Left Navigator (Desktop Only) */
+.page-navigator {
+    position: fixed;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 90;
+    background: rgba(30, 41, 59, 0.85);
+    padding: 20px 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.nav-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 0.2s;
+}
+
+.nav-item:hover {
+    color: var(--color-white);
+}
+
+.nav-item:hover .nav-dot {
+    background-color: var(--color-gold-bright);
+    transform: scale(1.3);
+}
+
+.nav-item.active {
+    color: var(--color-gold-bright);
+    font-weight: 600;
+}
+
+.nav-item.active .nav-dot {
+    background-color: var(--color-gold-bright);
+    box-shadow: 0 0 8px var(--color-gold-bright);
+    transform: scale(1.4);
+}
+
+/* Mobile Bottom Dock (Shown on screens < 1200px) */
+.bottom-dock {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.bottom-dock-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 0 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.bottom-dock-container::-webkit-scrollbar {
+    display: none;
+}
+
+.dock-item {
+    flex-shrink: 0;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s;
+}
+
+.dock-item.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+/* --- Container Query Typography inside Brochure --- */
+@container page (min-width: 0) {
+    /* Header/Footer tags on each page */
+    .page-header-tag {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--color-gold);
+        padding-bottom: 1.5cqw;
+        margin-bottom: 3cqw;
+        color: var(--color-primary);
+        font-family: var(--font-heading);
+        font-size: 1.6cqw;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+    
+    .page-footer-tag {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--color-gold);
+        padding-top: 1.5cqw;
+        margin-top: 3cqw;
+        color: var(--color-gold);
+        font-family: var(--font-heading);
+        font-size: 1.5cqw;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+    }
+    
+    .page-num {
+        font-weight: 600;
+        color: var(--color-primary);
+    }
+    
+    /* Headings inside brochure */
+    .brochure-title-lg {
+        font-family: var(--font-serif);
+        font-size: 6.5cqw;
+        line-height: 1.1;
+        font-weight: 700;
+        color: var(--color-primary);
+        letter-spacing: -0.01em;
+    }
+    
+    .brochure-title-md {
+        font-family: var(--font-serif);
+        font-size: 4.8cqw;
+        line-height: 1.2;
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+    
+    .brochure-subtitle-gold {
+        font-family: var(--font-heading);
+        font-size: 2.4cqw;
+        font-weight: 600;
+        color: var(--color-gold-bright);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: 2cqw;
+    }
+    
+    .brochure-heading {
+        font-family: var(--font-heading);
+        font-size: 3cqw;
+        color: var(--color-primary);
+        font-weight: 600;
+        margin-bottom: 1.5cqw;
+    }
+    
+    .brochure-body {
+        font-family: var(--font-body);
+        font-size: 1.8cqw;
+        line-height: 1.6;
+        color: #374151;
+        margin-bottom: 2cqw;
+    }
+    
+    .brochure-body-lead {
+        font-family: var(--font-body);
+        font-size: 2.2cqw;
+        line-height: 1.6;
+        color: var(--color-charcoal);
+        font-weight: 400;
+        margin-bottom: 2.5cqw;
+    }
+}
+
+/* Page Frame/Border styling for realistic luxury appearance */
+.page-border {
+    position: absolute;
+    top: 3cqw;
+    bottom: 3cqw;
+    left: 3cqw;
+    right: 3cqw;
+    border: 1px solid var(--color-gold);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.page-content-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.page-body-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ==================================================
+   PAGE SPECIFIC LAYOUT STYLES (Using cqw units)
+   ================================================== */
+
+/* PAGE 1: Front Cover & PAGE 16: Back Cover */
+.cover-page {
+    background-color: #ffffff !important;
+    color: var(--color-charcoal) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6cqw;
+}
+
+.cover-page .page-border {
+    border: 2px solid var(--color-gold) !important;
+}
+
+.cover-header {
+    text-align: center;
+}
+
+.cover-logo {
+    width: 25cqw;
+    height: auto;
+    margin: 4cqw auto;
+    background: white;
+    padding: 2.5cqw;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: block;
+}
+
+.cover-hero-wrapper {
+    position: relative;
+    height: 48cqw;
+    margin: 3cqw 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--color-gold);
+}
+
+.cover-factory-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+}
+
+.cover-hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 4cqw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cover-product-img {
+    height: 25cqw;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 2cqw;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.cover-tagline {
+    font-family: var(--font-serif);
+    font-size: 3.5cqw;
+    font-weight: 700;
+    color: var(--color-gold-bright);
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-top: 2cqw;
+}
+
+.cover-footer {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.8cqw;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-cream);
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 2cqw;
+}
+
+/* PAGE 2: About Company - Timeline Grid */
+.about-columns {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4cqw;
+    height: 100%;
+}
+
+.about-left-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-right-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(168, 207, 106, 0.1);
+    padding: 3.5cqw;
+    border-radius: 8px;
+    border: 1px solid var(--color-gold);
+}
+
+.mvv-item {
+    margin-bottom: 2.5cqw;
+}
+
+.mvv-item:last-child {
+    margin-bottom: 0;
+}
+
+.mvv-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5cqw;
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-size: 2.2cqw;
+    font-weight: 600;
+    margin-bottom: 0.8cqw;
+}
+
+.mvv-icon {
+    font-size: 2.6cqw;
+}
+
+.mvv-text {
+    font-family: var(--font-body);
+    font-size: 1.6cqw;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.timeline-mini {
+    margin-top: 3cqw;
+    border-left: 2px solid var(--color-primary);
+    padding-left: 2.5cqw;
+    display: flex;
+    flex-direction: column;
+    gap: 2cqw;
+}
+
+.timeline-event h4 {
+    font-family: var(--font-heading);
+    font-size: 1.8cqw;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.timeline-event p {
+    font-family: var(--font-body);
+    font-size: 1.5cqw;
+    color: #6b7280;
+}
+
+/* PAGE 3: Infrastructure - Machine Labels overlay & Storage columns */
+.infra-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 3cqw;
+    height: 100%;
+}
+
+.infra-image-container {
+    position: relative;
+    height: 38cqw;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-gold);
+}
+
+.infra-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.machine-label {
+    position: absolute;
+    background-color: rgba(1, 147, 64, 0.9);
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 1.3cqw;
+    padding: 0.6cqw 1.2cqw;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-left: 3px solid var(--color-gold-bright);
+}
+
+.label-sortex { top: 15%; left: 10%; }
+.label-cleaner { top: 45%; right: 15%; }
+.label-packer { bottom: 20%; left: 30%; }
+
+.infra-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5cqw;
+}
+
+.infra-card {
+    background: white;
+    padding: 2.5cqw;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-top: 3px solid var(--color-primary);
+}
+
+.infra-card h4 {
+    font-family: var(--font-heading);
+    font-size: 2cqw;
+    color: var(--color-primary);
+    margin-bottom: 1cqw;
+}
+
+.infra-card p {
+    font-family: var(--font-body);
+    font-size: 1.5cqw;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+/* PAGE 4: Processing Workflow Infographic */
+.workflow-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90%;
+    padding: 2cqw 0;
+}
+
+.workflow-steps-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5cqw;
+    position: relative;
+}
+
+.workflow-steps-vertical::before {
+    content: '';
+    position: absolute;
+    left: 4cqw;
+    top: 5cqw;
+    bottom: 5cqw;
+    width: 2px;
+    background: repeating-linear-gradient(
+        to bottom,
+        var(--color-gold) 0px,
+        var(--color-gold) 8px,
+        transparent 8px,
+        transparent 16px
+    );
+}
+
+.workflow-step-item {
+    display: flex;
+    align-items: center;
+    gap: 3.5cqw;
+    background-color: white;
+    padding: 2cqw 3cqw;
+    border-radius: 8px;
+    border: 1px solid rgba(168, 207, 106, 0.3);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    position: relative;
+    z-index: 2;
+}
+
+.step-num-bubble {
+    width: 8cqw;
+    height: 8cqw;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 2.8cqw;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(1, 147, 64, 0.3);
+}
+
+.step-details h4 {
+    font-family: var(--font-heading);
+    font-size: 2.2cqw;
+    color: var(--color-primary);
+    margin-bottom: 0.5cqw;
+}
+
+.step-details p {
+    font-family: var(--font-body);
+    font-size: 1.5cqw;
+    color: #4b5563;
+}
+
+/* PAGE 5: Why Choose Us - Quadrant */
+.quadrant-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3.5cqw;
+    height: 85%;
+}
+
+.quadrant-item {
+    background: white;
+    border: 1px solid rgba(168, 207, 106, 0.4);
+    border-radius: 8px;
+    padding: 4cqw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    border-left: 4px solid var(--color-primary);
+    transition: transform 0.2s;
+}
+
+.quadrant-icon {
+    font-size: 5cqw;
+    margin-bottom: 2cqw;
+}
+
+.quadrant-item h4 {
+    font-family: var(--font-heading);
+    font-size: 2.4cqw;
+    color: var(--color-primary);
+    margin-bottom: 1.5cqw;
+}
+
+.quadrant-item p {
+    font-family: var(--font-body);
+    font-size: 1.6cqw;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+/* PAGE 6: Product Portfolio Structure */
+.portfolio-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4cqw;
+    height: 85%;
+}
+
+.portfolio-intro {
+    text-align: center;
+    max-width: 80cqw;
+    margin: 0 auto;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3cqw;
+}
+
+.portfolio-cat-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(168, 207, 106, 0.4);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-cat-card img {
+    width: 100%;
+    height: 20cqw;
+    object-fit: cover;
+}
+
+.portfolio-cat-content {
+    padding: 3cqw;
+}
+
+.portfolio-cat-content h4 {
+    font-family: var(--font-heading);
+    font-size: 2.4cqw;
+    color: var(--color-primary);
+    margin-bottom: 1cqw;
+}
+
+.portfolio-cat-content p {
+    font-family: var(--font-body);
+    font-size: 1.5cqw;
+    color: #4b5563;
+    line-height: 1.4;
+}
+
+/* PAGES 7, 8, 9, 10: Product Pages & Bag layout */
+.product-page-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 4cqw;
+    height: 85%;
+    align-items: center;
+}
+
+.product-page-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-page-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 12px;
+    padding: 4cqw;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+    border: 1px solid rgba(168, 207, 106, 0.3);
+}
+
+.brochure-bag-display {
+    width: 100%;
+    max-height: 48cqw;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.08));
+}
+
+.brand-details-list {
+    margin-top: 3cqw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5cqw;
+}
+
+.brand-detail-item {
+    display: flex;
+    gap: 1.5cqw;
+}
+
+.brand-bullet {
+    color: var(--color-gold-bright);
+    font-size: 2.2cqw;
+    font-weight: bold;
+}
+
+.brand-detail-text h5 {
+    font-family: var(--font-heading);
+    font-size: 1.8cqw;
+    color: var(--color-primary);
+    margin-bottom: 0.3cqw;
+}
+
+.brand-detail-text p {
+    font-family: var(--font-body);
+    font-size: 1.5cqw;
+    color: #555555;
+    line-height: 1.4;
+}
+
+/* Jowar Multi-brand grid (8 brands) */
+.jowar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2cqw;
+    margin-top: 2cqw;
+}
+
+.jowar-brand-card {
+    background: white;
+    border-radius: 6px;
+    padding: 1.5cqw;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    border: 1px solid rgba(168, 207, 106, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.jowar-brand-card img {
+    height: 16cqw;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 1cqw;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.05));
+}
+
+.jowar-brand-card h5 {
+    font-family: var(--font-heading);
+    font-size: 1.5cqw;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.jowar-brand-card span {
+    font-family: var(--font-body);
+    font-size: 1.2cqw;
+    color: var(--color-gold);
+}
+
+/* PAGE 11: Quality Assurance & PAGE 12: Technology */
+.tech-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4cqw;
+    height: 85%;
+    align-items: center;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2cqw;
+}
+
+.tech-item-row {
+    display: flex;
+    align-items: center;
+    gap: 2.5cqw;
+    background: white;
+    padding: 2.5cqw;
+    border-radius: 6px;
+    border: 1px solid rgba(168, 207, 106, 0.3);
+}
+
+.tech-row-icon {
+    font-size: 4cqw;
+    color: var(--color-primary);
+}
+
+.tech-row-details h4 {
+    font-family: var(--font-heading);
+    font-size: 1.9cqw;
+    color: var(--color-primary);
+    margin-bottom: 0.3cqw;
+}
+
+.tech-row-details p {
+    font-family: var(--font-body);
+    font-size: 1.4cqw;
+    color: #555555;
+}
+
+.tech-large-visual {
+    height: 52cqw;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--color-gold);
+}
+
+.tech-large-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* PAGE 13: Factory Gallery Collage */
+.collage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2cqw;
+    height: 80%;
+}
+
+.collage-item {
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.collage-item:hover img {
+    transform: scale(1.05);
+}
+
+.collage-c1 { grid-column: 1 / 3; grid-row: 1 / 3; }
+.collage-c2 { grid-column: 3 / 5; grid-row: 1 / 2; }
+.collage-c3 { grid-column: 3 / 4; grid-row: 2 / 4; }
+.collage-c4 { grid-column: 4 / 5; grid-row: 2 / 3; }
+.collage-c5 { grid-column: 1 / 3; grid-row: 3 / 4; }
+.collage-c6 { grid-column: 4 / 5; grid-row: 3 / 4; }
+
+.collage-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(1, 147, 64, 0.85);
+    color: white;
+    padding: 0.8cqw 1.5cqw;
+    font-family: var(--font-heading);
+    font-size: 1.3cqw;
+    font-weight: 500;
+}
+
+/* PAGE 14: Markets We Serve Map */
+.markets-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4cqw;
+    height: 85%;
+    align-items: center;
+}
+
+.markets-left {
+    display: flex;
+    flex-direction: column;
+    gap: 3cqw;
+}
+
+.market-highlight-card {
+    background: rgba(1, 147, 64, 0.05);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 0 8px 8px 0;
+    padding: 3cqw;
+    border-top: 1px solid rgba(168, 207, 106, 0.2);
+    border-right: 1px solid rgba(168, 207, 106, 0.2);
+    border-bottom: 1px solid rgba(168, 207, 106, 0.2);
+}
+
+.markets-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-cream);
+    border: 1px solid var(--color-gold);
+    padding: 4cqw;
+    border-radius: 8px;
+}
+
+.markets-map-placeholder {
+    width: 100%;
+    height: 38cqw;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px dashed var(--color-gold);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-primary);
+    padding: 2cqw;
+}
+
+.maharashtra-text-icon {
+    font-size: 6cqw;
+    margin-bottom: 1.5cqw;
+    color: var(--color-gold-bright);
+}
+
+/* PAGE 15: Contact Page (GST, FSSAI, Maps iframe, QR Codes) */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.5cqw;
+    height: 85%;
+    align-items: start;
+}
+
+.contact-details-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5cqw;
+}
+
+.contact-info-row {
+    display: flex;
+    gap: 2cqw;
+}
+
+.contact-info-icon {
+    font-size: 3.2cqw;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.contact-info-content h4 {
+    font-family: var(--font-heading);
+    font-size: 1.8cqw;
+    color: var(--color-primary);
+    margin-bottom: 0.3cqw;
+}
+
+.contact-info-content p, .contact-info-content a {
+    font-family: var(--font-body);
+    font-size: 1.5cqw;
+    color: #4b5563;
+    text-decoration: none;
+}
+
+.contact-info-content a:hover {
+    color: var(--color-primary);
+}
+
+.reg-badges {
+    display: flex;
+    gap: 2cqw;
+    margin-top: 1cqw;
+}
+
+.reg-badge {
+    background: white;
+    border: 1px solid var(--color-gold);
+    padding: 1cqw 1.8cqw;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-size: 1.3cqw;
+    display: flex;
+    flex-direction: column;
+}
+
+.reg-badge span:first-child {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.reg-badge span:last-child {
+    color: #111827;
+    font-weight: 500;
+}
+
+.contact-right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5cqw;
+}
+
+.qr-box-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2cqw;
+}
+
+.qr-box {
+    background: white;
+    border: 1px solid var(--color-gold);
+    border-radius: 6px;
+    padding: 2cqw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.qr-img-placeholder {
+    width: 14cqw;
+    height: 14cqw;
+    margin-bottom: 1.2cqw;
+}
+
+.qr-img-placeholder svg {
+    width: 100%;
+    height: 100%;
+}
+
+.qr-box h5 {
+    font-family: var(--font-heading);
+    font-size: 1.3cqw;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.qr-box span {
+    font-family: var(--font-body);
+    font-size: 1.1cqw;
+    color: #6b7280;
+}
+
+.map-embed-card {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--color-gold);
+    height: 22cqw;
+}
+
+/* Missing Layouts for Unfinished Pages */
+.jowar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2cqw;
+}
+.jowar-brand-card {
+    background: white;
+    border: 1px solid var(--color-gold);
+    border-radius: 8px;
+    padding: 1.5cqw;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.jowar-brand-card img { width: 100%; height: auto; }
+.jowar-brand-card h5 { font-family: var(--font-heading); font-size: 1.2cqw; color: var(--color-primary); margin-top: 1cqw; }
+.jowar-brand-card span { font-size: 0.9cqw; color: #6b7280; }
+
+.tech-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4cqw;
+    align-items: center;
+}
+.tech-grid { display: flex; flex-direction: column; }
+.tech-item-row {
+    display: flex;
+    gap: 1.5cqw;
+    margin-bottom: 2cqw;
+}
+.tech-row-icon { font-size: 2.5cqw; }
+.tech-row-details h4 { font-family: var(--font-heading); font-size: 1.4cqw; color: var(--color-primary); margin-bottom: 0.5cqw; }
+.tech-row-details p { font-family: var(--font-body); font-size: 1.1cqw; color: var(--color-charcoal); }
+.tech-large-visual img { width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+.collage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 15cqw;
+    gap: 2cqw;
+}
+.collage-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.collage-item img { width: 100%; height: 100%; object-fit: cover; }
+.collage-c1 { grid-column: span 2; grid-row: span 2; }
+
+.markets-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4cqw;
+}
+.market-highlight-card {
+    background: white;
+    border-left: 4px solid var(--color-gold);
+    padding: 1.5cqw;
+    margin-top: 1.5cqw;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.markets-map-placeholder {
+    background: var(--color-cream);
+    border: 2px dashed var(--color-gold);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2cqw;
+    border-radius: 8px;
+}
+.maharashtra-text-icon { font-size: 4cqw; margin-bottom: 1cqw; }
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4cqw;
+}
+.contact-details-grid { display: flex; flex-direction: column; }
+.contact-info-row {
+    display: flex;
+    gap: 1.5cqw;
+    margin-bottom: 2cqw;
+}
+.contact-info-icon { font-size: 2cqw; }
+.contact-info-content h4 { font-family: var(--font-heading); font-size: 1.3cqw; color: var(--color-charcoal); margin-bottom: 0.5cqw; }
+.contact-info-content p { font-family: var(--font-body); font-size: 1.1cqw; color: var(--color-primary); font-weight: 500; }
+.contact-info-content a { color: var(--color-primary); text-decoration: none; }
+
+/* ==================================================
+   DARK MODE OVERRIDES (Acrobat view adjustments)
+   ================================================== */
+body.dark-mode {
+    background-color: var(--color-grey-viewer-dark);
+}
+
+body.dark-mode .page-container {
+    background-color: var(--color-grey-viewer-dark);
+}
+
+body.dark-mode .brochure-page {
+    background-color: #0f172a; /* Luxury emerald charcoal */
+    color: #e2e8f0;
+}
+
+body.dark-mode .brochure-page:not(.cover-page) {
+    border: 1px solid rgba(168, 207, 106, 0.4);
+}
+
+body.dark-mode .brochure-title-lg,
+body.dark-mode .brochure-title-md,
+body.dark-mode .brochure-heading,
+body.dark-mode .page-header-tag,
+body.dark-mode .page-num {
+    color: var(--color-cream);
+}
+
+body.dark-mode .brochure-body,
+body.dark-mode .brochure-body-lead {
+    color: #94a3b8;
+}
+
+body.dark-mode .about-right-col {
+    background-color: rgba(168, 207, 106, 0.05);
+}
+
+body.dark-mode .mvv-text,
+body.dark-mode .timeline-event p,
+body.dark-mode .infra-card p,
+body.dark-mode .step-details p,
+body.dark-mode .quadrant-item p,
+body.dark-mode .portfolio-cat-content p,
+body.dark-mode .brand-detail-text p,
+body.dark-mode .tech-row-details p,
+body.dark-mode .contact-info-content p,
+body.dark-mode .contact-info-content a {
+    color: #94a3b8;
+}
+
+body.dark-mode .infra-card,
+body.dark-mode .workflow-step-item,
+body.dark-mode .quadrant-item,
+body.dark-mode .portfolio-cat-card,
+body.dark-mode .product-page-right,
+body.dark-mode .jowar-brand-card,
+body.dark-mode .tech-item-row,
+body.dark-mode .qr-box,
+body.dark-mode .reg-badge {
+    background-color: #1e293b;
+    border-color: rgba(168, 207, 106, 0.2);
+}
+
+body.dark-mode .page-border {
+    border-color: var(--color-gold);
+}
+
+/* ==================================================
+   RESPONSIVE SCALING & DOCK NAVIGATION
+   ================================================== */
+@media (max-width: 1200px) {
+    .page-navigator {
+        display: none; /* Hide vertical navigator on smaller viewports */
+    }
+    
+    .bottom-dock {
+        display: block; /* Show horizontal bottom navigator */
+    }
+}
+
+@media (max-width: 794px) {
+    :root {
+        --page-width: 92vw;
+        --page-height: calc(92vw * 1.414); /* Keep exact A4 Aspect Ratio */
+    }
+
+    .page-container {
+        padding: 80px 0 80px 0;
+        gap: 20px;
+    }
+    
+    .top-action-bar {
+        padding: 0 15px;
+    }
+    
+    .action-btn span {
+        display: none; /* Hide text in action buttons on mobile, show icons */
+    }
+    
+    .action-btn {
+        padding: 8px 10px;
+    }
+}
+
+/* Smooth Scrolling Fade Animations */
+.brochure-page {
+    opacity: 0.85;
+    transform: scale(0.98);
+    transition: opacity 0.6s ease, transform 0.6s ease, background-color 0.3s ease;
+}
+
+.brochure-page.active-visible-page {
+    opacity: 1;
+    transform: scale(1);
+}

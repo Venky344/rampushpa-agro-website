@@ -1,0 +1,336 @@
+/* 
+   Rampushpa Agro Company Profile - Premium Corporate Storytelling Page
+   Design Style: Light, Minimalist, Corporate, Magazine-style Editorial
+*/
+
+:root {
+    --color-story-bg: #ffffff;
+    --color-story-bg-light: #f8fafc;
+    --color-story-text: #1e293b;
+    --color-story-text-muted: #64748b;
+    --color-story-border: #e2e8f0;
+}
+
+body.story-page {
+    background-color: var(--color-story-bg);
+    color: var(--color-story-text);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+/* Scroll progress bar */
+.scroll-progress-container {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    z-index: 99;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: var(--color-primary);
+    width: 0%;
+}
+
+/* Sections */
+.story-section {
+    position: relative;
+    padding: 7rem 2rem;
+    border-bottom: 1px solid var(--color-story-border);
+}
+
+@media (max-width: 768px) {
+    .story-section {
+        padding: 4rem 1.25rem;
+    }
+}
+
+/* Section 1: Hero Storytelling */
+.story-hero {
+    position: relative;
+    height: 90vh;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: #0f172a;
+}
+
+.story-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(15, 23, 42, 0.9) 30%, rgba(15, 23, 42, 0.4) 100%);
+    z-index: 10;
+}
+
+.story-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/compressed/factory01.webp');
+    background-size: cover;
+    background-position: center;
+    z-index: 5;
+    filter: brightness(0.65);
+}
+
+.story-hero-content {
+    position: relative;
+    z-index: 20;
+    max-width: 750px;
+    width: 100%;
+}
+
+/* Alternating Layout Patterns */
+.editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3rem;
+    align-items: center;
+}
+
+.editorial-text, .editorial-stats {
+    grid-column: span 6;
+}
+
+.editorial-image {
+    grid-column: span 6;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-story-border);
+}
+
+@media (max-width: 768px) {
+    .editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .editorial-text, .editorial-image, .editorial-stats {
+        grid-column: span 1 !important;
+    }
+}
+
+/* Full Width Image Section */
+.full-width-image-banner {
+    position: relative;
+    height: 50vh;
+    min-height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+@media (max-width: 768px) {
+    .full-width-image-banner {
+        background-attachment: scroll; /* Disable parallax on mobile to prevent performance lag */
+        height: 35vh;
+    }
+}
+
+/* Split Layout */
+.split-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+@media (max-width: 768px) {
+    .split-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Section 6: Timeline Journey */
+.timeline-journey {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline-journey-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-story-border);
+    transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+    .timeline-journey-line {
+        left: 20px;
+    }
+}
+
+.timeline-step {
+    position: relative;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .timeline-step {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 50px;
+        margin-bottom: 4rem;
+    }
+}
+
+.timeline-step-left {
+    width: 44%;
+    text-align: right;
+}
+
+.timeline-step-right {
+    width: 44%;
+}
+
+@media (max-width: 768px) {
+    .timeline-step-left, .timeline-step-right {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+.timeline-node {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid var(--color-primary);
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.timeline-step:hover .timeline-node {
+    background: var(--color-primary);
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 10px rgba(1, 147, 64, 0.4);
+}
+
+@media (max-width: 768px) {
+    .timeline-node {
+        left: 20px;
+        top: 24px;
+        transform: translate(-50%, 0);
+    }
+    .timeline-step:hover .timeline-node {
+        transform: translate(-50%, 0) scale(1.2);
+    }
+}
+
+/* Asymmetric Magazine Gallery Layout */
+.asymmetric-gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    grid-auto-rows: minmax(150px, auto);
+}
+
+.gallery-card {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--color-story-border);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card:hover img {
+    transform: scale(1.04);
+}
+
+.col-span-8 { grid-column: span 8; grid-row: span 2; }
+.col-span-4 { grid-column: span 4; grid-row: span 2; }
+.col-span-6 { grid-column: span 6; grid-row: span 2; }
+.col-span-12 { grid-column: span 12; grid-row: span 3; }
+
+@media (max-width: 768px) {
+    .asymmetric-gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+    }
+    .col-span-8, .col-span-4, .col-span-6, .col-span-12 {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+}
+
+/* Animations Reveal */
+.story-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.story-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Brand Products cards */
+.story-product-card {
+    background: #ffffff;
+    border: 1px solid var(--color-story-border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+}
+
+.story-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-color: var(--color-primary);
+}
+
+/* Floating Feature Benefits */
+.benefit-card {
+    background: var(--color-story-bg-light);
+    border: 1px solid var(--color-story-border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    background: #ffffff;
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+}
+
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(1, 147, 64, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
